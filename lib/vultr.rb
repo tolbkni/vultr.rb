@@ -97,7 +97,7 @@ module Vultr
     else
       resp = Vultr.request.send method_name, url, body
     end
-    [resp.status, resp.body]
+    {status: resp.status, result: resp.body}
   end
 
   def process_api_key(parts)
@@ -131,6 +131,8 @@ module Vultr
   end
 
   def process_params_args_from_keys(params, args)
+    return if params.nil?
+
     body = Hash.new
     hash = args[-1]
     if hash.is_a?(Hash)
@@ -139,7 +141,7 @@ module Vultr
       end
     end
 
-    body
+    body unless body.empty?
   end
 
   private
