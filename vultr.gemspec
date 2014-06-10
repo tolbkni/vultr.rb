@@ -8,8 +8,8 @@ Gem::Specification.new do |s|
   s.version       = Vultr::VERSION::STRING
   s.authors       = ["Tolbkni Kao"]
   s.email         = ["tolbkni@gmail.com"]
-  s.summary       = %q{Ruby bindings for Vultr API.}
-  s.description   = %q{Ruby bindings for Vultr API.}
+  s.summary       = %q{Ruby bindings for VULTR API.}
+  s.description   = %q{Ruby bindings for VULTR API.}
   s.homepage      = "https://github.com/tolbkni/vultr"
   s.license       = "MIT"
 
