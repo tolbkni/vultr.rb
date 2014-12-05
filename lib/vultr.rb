@@ -137,7 +137,7 @@ module Vultr
     hash = args[-1]
     if hash.is_a?(Hash)
       hash.each do |key, value|
-        body[key] = value unless params.include? key
+        body[key] = value if params.include? key.to_s
       end
     end
 
