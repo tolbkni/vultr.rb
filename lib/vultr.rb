@@ -30,7 +30,7 @@ module Vultr
           start:   [:post, "/v1/server/start?api_key=[api_key]", ["SUBID"]],
           destroy: [:post, "/v1/server/destroy?api_key=[api_key]", ["SUBID"]],
           create:  [:post, "/v1/server/create?api_key=[api_key]",
-                    ["DCID", "VPSPLANID", "OSID", "ipxe_chain_url", "SCRIPTID", "SNAPSHOTID"]]
+                    ["DCID", "VPSPLANID", "OSID", "ipxe_chain_url", "SCRIPTID", "SNAPSHOTID", 'label']]
       },
       OS: {
           list: [:get, "/v1/os/list"]
