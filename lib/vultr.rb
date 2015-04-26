@@ -1,39 +1,39 @@
-require "faraday"
-require "faraday_middleware"
-require "vultr/version"
+require 'faraday'
+require 'faraday_middleware'
+require 'vultr/version'
 
 module Vultr
   extend self
 
   DEFINITIONS = {
       Snapshot: {
-          list:    [:get, "/v1/snapshot/list?api_key=[api_key]"],
-          destroy: [:post, "/v1/snapshot/destroy?api_key=[api_key]", "SNAPSHOTID"],
-          create:  [:post, "/v1/snapshot/create?api_key=[api_key]", "SUBID"]
+          list: [:get, '/v1/snapshot/list?api_key=[api_key]'],
+          destroy: [:post, '/v1/snapshot/destroy?api_key=[api_key]', 'SNAPSHOTID'],
+          create: [:post, '/v1/snapshot/create?api_key=[api_key]', 'SUBID']
       },
       Plan: {
-          list: [:get, "/v1/plans/list"]
+          list: [:get, '/v1/plans/list']
       },
       Region: {
-          list:         [:get, "/v1/regions/list"],
-          availability: [:get, "/v1/regions/availability?DCID=[DCID]"]
+          list: [:get, '/v1/regions/list'],
+          availability: [:get, '/v1/regions/availability?DCID=[DCID]']
       },
       StartupScript: {
-          list:    [:get, "/v1/startupscript/list?api_key=[api_key]"],
-          destroy: [:post, "/v1/startupscript/destroy?api_key=[api_key]", "SCRIPTID"],
-          create:  [:post, "/v1/startupscript/create?api_key=[api_key]", ["name", "script"]]
+          list: [:get, '/v1/startupscript/list?api_key=[api_key]'],
+          destroy: [:post, '/v1/startupscript/destroy?api_key=[api_key]', 'SCRIPTID'],
+          create: [:post, '/v1/startupscript/create?api_key=[api_key]', ['name', 'script']]
       },
       Server: {
-          list:    [:get, "/v1/server/list?api_key=[api_key]"],
-          reboot:  [:post, "/v1/server/reboot?api_key=[api_key]", "SUBID"],
-          halt:    [:post, "/v1/server/halt?api_key=[api_key]", "SUBID"],
-          start:   [:post, "/v1/server/start?api_key=[api_key]", "SUBID"],
-          destroy: [:post, "/v1/server/destroy?api_key=[api_key]", "SUBID"],
-          create:  [:post, "/v1/server/create?api_key=[api_key]",
-                    ["DCID", "VPSPLANID", "OSID", "ipxe_chain_url", "SCRIPTID", "SNAPSHOTID"]]
+          list: [:get, '/v1/server/list?api_key=[api_key]'],
+          reboot: [:post, '/v1/server/reboot?api_key=[api_key]', 'SUBID'],
+          halt: [:post, '/v1/server/halt?api_key=[api_key]', 'SUBID'],
+          start: [:post, '/v1/server/start?api_key=[api_key]', 'SUBID'],
+          destroy: [:post, '/v1/server/destroy?api_key=[api_key]', 'SUBID'],
+          create: [:post, '/v1/server/create?api_key=[api_key]',
+                   ['DCID', 'VPSPLANID', 'OSID', 'ipxe_chain_url', 'SCRIPTID', 'SNAPSHOTID']]
       },
       OS: {
-          list: [:get, "/v1/os/list"]
+          list: [:get, '/v1/os/list']
       }
   }
 
@@ -43,17 +43,17 @@ module Vultr
     resource_class = Class.new(Object) do
       DEFINITIONS[resource_name].each do |action, array|
         method_name = array[0]
-        path, query = array[1].split("?")
+        path, query = array[1].split('?')
         params = array[2]
 
         define_singleton_method "_#{action}" do |*args|
           query_for_method = Vultr.process_query_args_from_path(query, args)
-          url = [Vultr.api_endpoint, path].join("")
+          url = [Vultr.api_endpoint, path].join('')
 
           if query_for_method.nil?
             url
           else
-            [url, query_for_method].join("?")
+            [url, query_for_method].join('?')
           end
         end
 
@@ -84,11 +84,11 @@ module Vultr
 
   def api_key
     return @api_key if @api_key
-    "api_key_required"
+    'api_key_required'
   end
 
   def api_endpoint
-    "https://api.vultr.com"
+    'https://api.vultr.com'
   end
 
   def request_and_respond(method_name, url, body = nil)
@@ -101,8 +101,8 @@ module Vultr
   end
 
   def process_api_key(parts)
-    api_key_index = parts.index "api_key="
-    api_key_index = parts.index "&api_key=" if !api_key_index
+    api_key_index = parts.index 'api_key='
+    api_key_index = parts.index '&api_key=' if !api_key_index
     parts[api_key_index + 1] = api_key if api_key_index
 
     parts
@@ -127,7 +127,7 @@ module Vultr
       end
     end
 
-    parts.join("")
+    parts.join('')
   end
 
   def process_params_args_from_keys(params, args)
@@ -148,13 +148,13 @@ module Vultr
 
   def setup_request!
     options = {
-        headers: {"Accept" => "application/json"},
+        headers: {:Accept => 'application/json'},
         ssl: {verify: false}
     }
 
     Vultr.request = Faraday.new(options) do |faraday|
       faraday.request :url_encoded
-      faraday.response :json, :content_type => "application/json"
+      faraday.response :json, :content_type => 'application/json'
       faraday.response :follow_redirects
       faraday.adapter Faraday.default_adapter
     end

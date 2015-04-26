@@ -24,11 +24,11 @@ Add this line to your application's Gemfile:
 
 And then execute:
 
-    bundle
+    $ bundle
 
 Or install it yourself as:
 
-    gem install vultr
+    $ gem install vultr
 
 ## Usage
 
