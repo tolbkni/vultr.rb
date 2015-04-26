@@ -8,8 +8,8 @@ module Vultr
   DEFINITIONS = {
       Snapshot: {
           list: [:get, '/v1/snapshot/list?api_key=[api_key]'],
-          destroy: [:post, '/v1/snapshot/destroy?api_key=[api_key]', 'SNAPSHOTID'],
-          create: [:post, '/v1/snapshot/create?api_key=[api_key]', 'SUBID']
+          destroy: [:post, '/v1/snapshot/destroy?api_key=[api_key]', ['SNAPSHOTID']],
+          create: [:post, '/v1/snapshot/create?api_key=[api_key]', ['SUBID']]
       },
       Plan: {
           list: [:get, '/v1/plans/list']
@@ -20,17 +20,17 @@ module Vultr
       },
       StartupScript: {
           list: [:get, '/v1/startupscript/list?api_key=[api_key]'],
-          destroy: [:post, '/v1/startupscript/destroy?api_key=[api_key]', 'SCRIPTID'],
+          destroy: [:post, '/v1/startupscript/destroy?api_key=[api_key]', ['SCRIPTID']],
           create: [:post, '/v1/startupscript/create?api_key=[api_key]', ['name', 'script']]
       },
       Server: {
           list: [:get, '/v1/server/list?api_key=[api_key]'],
-          reboot: [:post, '/v1/server/reboot?api_key=[api_key]', 'SUBID'],
-          halt: [:post, '/v1/server/halt?api_key=[api_key]', 'SUBID'],
-          start: [:post, '/v1/server/start?api_key=[api_key]', 'SUBID'],
-          destroy: [:post, '/v1/server/destroy?api_key=[api_key]', 'SUBID'],
+          reboot: [:post, '/v1/server/reboot?api_key=[api_key]', ['SUBID']],
+          halt: [:post, '/v1/server/halt?api_key=[api_key]', ['SUBID']],
+          start: [:post, '/v1/server/start?api_key=[api_key]', ['SUBID']],
+          destroy: [:post, '/v1/server/destroy?api_key=[api_key]', ['SUBID']],
           create: [:post, '/v1/server/create?api_key=[api_key]',
-                   ['DCID', 'VPSPLANID', 'OSID', 'ipxe_chain_url', 'SCRIPTID', 'SNAPSHOTID']]
+                   ['DCID', 'VPSPLANID', 'OSID', 'ipxe_chain_url', 'SCRIPTID', 'SNAPSHOTID', 'label']]
       },
       OS: {
           list: [:get, '/v1/os/list']
