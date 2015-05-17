@@ -1,3 +1,9 @@
+== 0.2.0 / 2015-05-03
+
+* Update README.md
+* Update to the latest APIs.
+* Minor bug fixes.
+
 == 0.1.1 / 2014-06-10
 
 * Update README.
