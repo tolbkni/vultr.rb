@@ -37,7 +37,7 @@ module Vultr
           availability: [:get, '/v1/regions/availability?DCID=[DCID]']
       },
       Server: {
-          list: [:get, '/v1/server/list?api_key=[api_key]'],
+          list: [:get, '/v1/server/list?api_key=[api_key]', ['SUBID']],
           reboot: [:post, '/v1/server/reboot?api_key=[api_key]', ['SUBID']],
           halt: [:post, '/v1/server/halt?api_key=[api_key]', ['SUBID']],
           start: [:post, '/v1/server/start?api_key=[api_key]', ['SUBID']],
