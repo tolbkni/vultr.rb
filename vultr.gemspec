@@ -10,7 +10,7 @@ Gem::Specification.new do |s|
   s.email         = ['tolbkni@gmail.com']
   s.summary       = %q{Ruby bindings for VULTR API.}
   s.description   = %q{Ruby bindings for VULTR API.}
-  s.homepage      = 'https://github.com/tolbkni/vultr'
+  s.homepage      = 'https://github.com/tolbkni/vultr.rb'
   s.license       = 'MIT'
 
   s.files         = `git ls-files -z`.split("\x0")

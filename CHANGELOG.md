@@ -1,3 +1,7 @@
+== 0.2.1 / 2015-05-28
+
+* Minor bug fixes.
+
 == 0.2.0 / 2015-05-03
 
 * Update README.md
