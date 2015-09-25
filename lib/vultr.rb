@@ -61,7 +61,8 @@ module Vultr
           reverse_set_ipv4: [:post, '/v1/server/reverse_set_ipv4?api_key=[api_key]', ['SUBID', 'ip']],
           reverse_set_ipv6: [:post, '/v1/server/reverse_set_ipv6?api_key=[api_key]', ['SUBID', 'ip']],
           upgrade_plan: [:post, '/v1/server/upgrade_plan?api_key=[api_key]', ['SUBID', 'VPSPLANID']],
-          upgrade_plan_list: [:get, '/v1/server/upgrade_plan_list?api_key=[api_key]&SUBID=[SUBID]']
+          upgrade_plan_list: [:get, '/v1/server/upgrade_plan_list?api_key=[api_key]&SUBID=[SUBID]'],
+          bandwidth: [:get, '/v1/server/bandwidth?api_key=[api_key]&SUBID=[SUBID]']
       },
       Snapshot: {
           list: [:get, '/v1/snapshot/list?api_key=[api_key]'],
