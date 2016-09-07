@@ -26,7 +26,7 @@ module Vultr
           label_set: [:post, '/v1/block/label_set?api_key=[api_key]', ['SUBID', 'label']],
           list: [:get, '/v1/block/list?api_key=[api_key]&SUBID=[SUBID]'],
           resize: [:post, '/v1/block/resize?api_key=[api_key]', ['SUBID', 'size_gb']]
-      }
+      },
       DNS: {
           create_domain: [:post, '/v1/dns/create_domain?api_key=[api_key]', ['domain', 'serverip']],
           create_record: [:post, '/v1/dns/create_record?api_key=[api_key]', ['domain', 'name', 'type', 'data', 'ttl', 'priority']],
@@ -58,7 +58,7 @@ module Vultr
           destroy: [:post, '/v1/reservedip/list?api_key=[api_key]', ['ip_address']],
           detach: [:post, '/v1/reservedip/list?api_key=[api_key]', ['ip_address', 'detach_SUBID']],
           list: [:get, '/v1/reservedip/list?api_key=[api_key]']
-      }
+      },
       Server: {
           app_change: [:post, '/v1/server/app_change?api_key=[api_key]', ['SUBID', 'APPID']],
           app_change_list: [:get, '/v1/server/app_change?api_key=[api_key]&SUBID=[SUBID]'],
@@ -190,9 +190,8 @@ module Vultr
   end
 
   def process_api_key(parts)
-    api_key_index = parts.index 'api_key='
-    api_key_index = parts.index '&api_key=' unless api_key_index
-    parts[api_key_index + 1] = api_key if api_key_index
+    api_key_index = parts.index 'api_key=[api_key]'
+    parts[api_key_index].sub!(/\[api_key\]/, api_key) if api_key_index
 
     parts
   end
@@ -200,23 +199,21 @@ module Vultr
   def process_query_args_from_path(query, args)
     return if query.nil?
 
-    parts = query.split(/\[|\]/)
+    parts = query.split('&')
     parts = process_api_key(parts)
 
     hash = args[-1]
     if hash.is_a?(Hash)
       hash.each do |key, value|
-        query_setter = "#{key}="
-        query_arg_index = parts.index query_setter
-        query_arg_index = parts.index "&#{query_setter}" unless query_arg_index
-
-        unless query_arg_index.nil?
-          parts[query_arg_index+1] = value
-        end
+        query_arg_index = parts.index "#{key}=[#{key}]"
+        parts[query_arg_index].sub!(/\[.*\]/, value.to_s) if query_arg_index
       end
     end
 
-    parts.join('')
+    parts.delete_if do |x|
+      x =~ /=\[.*\]/
+    end
+    parts.join('&')
   end
 
   def process_params_args_from_keys(params, args)

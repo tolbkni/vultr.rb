@@ -22,6 +22,6 @@ Gem::Specification.new do |s|
   s.add_dependency 'faraday_middleware', '~> 0.9.2'
 
   s.add_development_dependency 'bundler', '~> 1.6'
-  s.add_development_dependency 'rake', '~> 0'
-  s.add_development_dependency 'minitest', '~> 0'
+  s.add_development_dependency 'rake'
+  s.add_development_dependency 'minitest'
 end

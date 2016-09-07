@@ -1,3 +1,8 @@
+== 0.3.1 / 2016-09-08
+
+* Minor bug fixes.
+* Refine args handling.
+
 == 0.3.0 / 2016-09-07
 
 * Update to the latest APIs.
