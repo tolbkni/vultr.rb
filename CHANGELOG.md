@@ -1,3 +1,12 @@
+== 0.3.0 / 2016-09-07
+
+* Update to the latest APIs.
+
+== 0.2.2 / 2015-09-25
+
+* New function [server_bandwidth](https://www.vultr.com/api/#server_bandwidth).
+  Thanks to @molisoft.
+
 == 0.2.1 / 2015-05-28
 
 * Minor bug fixes.
