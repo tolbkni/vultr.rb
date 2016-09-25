@@ -1,3 +1,7 @@
+== 0.3.2 / 2016-09-25
+
+* Update README.md
+
 == 0.3.1 / 2016-09-08
 
 * Minor bug fixes.
