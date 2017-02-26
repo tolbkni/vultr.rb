@@ -234,8 +234,7 @@ module Vultr
 
   def setup_request!
     options = {
-        headers: {:Accept => 'application/json'},
-        ssl: {verify: false}
+        headers: {:Accept => 'application/json'}
     }
 
     Vultr.request = Faraday.new(options) do |faraday|
