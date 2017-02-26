@@ -1,3 +1,7 @@
+== 0.3.3 / 2017-02-26
+
+* Verify the SSL certificate
+
 == 0.3.2 / 2016-09-25
 
 * Update README.md
