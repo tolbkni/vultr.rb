@@ -51,12 +51,12 @@ module Vultr
           availability: [:get, '/v1/regions/availability?DCID=[DCID]'],
           list: [:get, '/v1/regions/list']
       },
-      RevervedIP: {
-          attach: [:post, '/v1/reservedip/list?api_key=[api_key]', ['ip_address', 'attach_SUBID']],
-          convert: [:post, '/v1/reservedip/list?api_key=[api_key]', ['SUBID', 'ip_address', 'label']],
-          create: [:post, '/v1/reservedip/list?api_key=[api_key]', ['DCID', 'ip_type', 'label']],
-          destroy: [:post, '/v1/reservedip/list?api_key=[api_key]', ['ip_address']],
-          detach: [:post, '/v1/reservedip/list?api_key=[api_key]', ['ip_address', 'detach_SUBID']],
+      ReservedIP: {
+          attach: [:post, '/v1/reservedip/attach?api_key=[api_key]', ['ip_address', 'attach_SUBID']],
+          convert: [:post, '/v1/reservedip/convert?api_key=[api_key]', ['SUBID', 'ip_address', 'label']],
+          create: [:post, '/v1/reservedip/create?api_key=[api_key]', ['DCID', 'ip_type', 'label']],
+          destroy: [:post, '/v1/reservedip/destroy?api_key=[api_key]', ['ip_address']],
+          detach: [:post, '/v1/reservedip/detach?api_key=[api_key]', ['ip_address', 'detach_SUBID']],
           list: [:get, '/v1/reservedip/list?api_key=[api_key]']
       },
       Server: {
