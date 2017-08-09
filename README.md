@@ -82,12 +82,12 @@ Vultr::Plans.list_vdc2
 Vultr::Regions.list
 Vultr::Regions.availability(DCID: dc_id)
 
-Vultr::RevervedIP.attach({ip_address: ip_address, attach_SUBID: attach_sub_id})
-Vultr::RevervedIP.convert({SUBID: sub_id, ip_address: ip_address, label: label})
-Vultr::RevervedIP.create({DCID: dc_id, ip_type: ip_type, label: label})
-Vultr::RevervedIP.destroy(ip_address: ip_address)
-Vultr::RevervedIP.detach({ip_address: ip_address, detach_SUBID: detach_sub_id})
-Vultr::RevervedIP.list
+Vultr::ReservedIP.attach({ip_address: ip_address, attach_SUBID: attach_sub_id})
+Vultr::ReservedIP.convert({SUBID: sub_id, ip_address: ip_address, label: label})
+Vultr::ReservedIP.create({DCID: dc_id, ip_type: ip_type, label: label})
+Vultr::ReservedIP.destroy(ip_address: ip_address)
+Vultr::ReservedIP.detach({ip_address: ip_address, detach_SUBID: detach_sub_id})
+Vultr::ReservedIP.list
 
 Vultr::Server.app_change({SUBID: sub_id, APPID: app_id})
 Vultr::Server.app_change_list(SUBID: sub_id)
