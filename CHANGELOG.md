@@ -1,3 +1,7 @@
+== 0.3.4 / 2017-09-26
+
+* Fix ReservedIP API
+
 == 0.3.3 / 2017-02-26
 
 * Verify the SSL certificate
