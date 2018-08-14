@@ -1,0 +1,26 @@
+language: ruby
+cache: bundler
+
+rvm:
+  - 1.9.3
+  - 2.0.0
+  - 2.1
+  - 2.2
+  - 2.3
+  - 2.4
+  - 2.5
+
+env:
+  matrix:
+    - SSL=no
+    - SSL=yes
+deploy:
+  provider: rubygems
+  api_key:
+    secure: dtLOQS0Obgd1CyJAnX2xU0P/VWRJHUFTXY0PmnnH2y0UBkY4uMTYwGVcy1vSkT7YAK6hUUlR1cMpM4lwiw+6Da2GMX8m4uZzQCAqH7h+0q4RB0H5rVedyr6X0pNMiPyT2S2F+ZwIVevAt8oBzgR2JUBMED+b2ThzJajHdfVOxbI=
+  gem: vultr
+  on:
+    tags: true
+    repo: tolbkni/vultr.rb
+    rvm: 2.4
+    condition: '"$SSL" = "yes"'
