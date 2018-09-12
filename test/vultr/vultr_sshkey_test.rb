@@ -1,29 +1,9 @@
-require 'test/test_helper'
+require 'test_helper'
 
 class VultrSshkeyTest < Minitest::Test
 
   def setup
     Vultr.api_key = ENV['VULTR_API_KEY']
-  end
-
-  def test_sshkey_list_url
-    sshkey_list_url = 'https://api.vultr.com/v1/sshkey/list?api_key=' + Vultr.api_key
-    assert_equal sshkey_list_url, Vultr::SSHKey._list
-  end
-
-  def test_sshkey_create_url
-    sshkey_create_url = 'https://api.vultr.com/v1/sshkey/create?api_key=' + Vultr.api_key
-    assert_equal sshkey_create_url, Vultr::SSHKey._create
-  end
-
-  def test_sshkey_destroy_url
-    sshkey_destroy_url = 'https://api.vultr.com/v1/sshkey/destroy?api_key=' + Vultr.api_key
-    assert_equal sshkey_destroy_url, Vultr::SSHKey._destroy
-  end
-
-  def test_sshkey_update_url
-    sshkey_update_url = 'https://api.vultr.com/v1/sshkey/update?api_key=' + Vultr.api_key
-    assert_equal sshkey_update_url, Vultr::SSHKey._update
   end
 
   def test_sshkey_responses

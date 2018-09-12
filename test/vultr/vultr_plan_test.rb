@@ -1,4 +1,4 @@
-require 'test/test_helper'
+require 'test_helper'
 
 class VultrPlanTest < Minitest::Test
 
@@ -6,13 +6,8 @@ class VultrPlanTest < Minitest::Test
     Vultr.api_key = ENV['VULTR_API_KEY']
   end
 
-  def test_plan_list_url
-    plan_list_url = 'https://api.vultr.com/v1/plans/list'
-    assert_equal plan_list_url, Vultr::Plan._list
-  end
-
   def test_plan_list_response
-    r = Vultr::Plan.list
+    r = Vultr::Plans.list
 
     assert r.has_key? :status
     assert_equal r[:status], 200

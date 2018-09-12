@@ -1,14 +1,9 @@
-require 'test/test_helper'
+require 'test_helper'
 
 class VultrBackupTest < Minitest::Test
 
   def setup
     Vultr.api_key = ENV['VULTR_API_KEY']
-  end
-
-  def test_backup_list_url
-    backup_list_url = 'https://api.vultr.com/v1/backup/list?api_key=' + Vultr.api_key
-    assert_equal backup_list_url, Vultr::Backup._list
   end
 
   def test_backup_list_response

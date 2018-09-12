@@ -1,4 +1,4 @@
-require 'test/test_helper'
+require 'test_helper'
 
 class VultrAccountTest < Minitest::Test
 
@@ -6,11 +6,6 @@ class VultrAccountTest < Minitest::Test
   # to set up fixture information.
   def setup
     Vultr.api_key = ENV['VULTR_API_KEY']
-  end
-
-  def test_account_info_url
-    account_info_url = 'https://api.vultr.com/v1/account/info?api_key=' + Vultr.api_key
-    assert_equal account_info_url, Vultr::Account._info
   end
 
   def test_account_info_response

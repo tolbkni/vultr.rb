@@ -1,14 +1,9 @@
-require 'test/test_helper'
+require 'test_helper'
 
 class VultrIsoTest < Minitest::Test
 
   def setup
     Vultr.api_key = ENV['VULTR_API_KEY']
-  end
-
-  def test_iso_list_url
-    iso_list_url = 'https://api.vultr.com/v1/iso/list?api_key=' + Vultr.api_key
-    assert_equal iso_list_url, Vultr::ISO._list
   end
 
   def test_iso_list_response

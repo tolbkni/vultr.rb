@@ -1,13 +1,8 @@
-require 'test/test_helper'
+require 'test_helper'
 
 class VultrOsTest < Minitest::Test
   def setup
     Vultr.api_key = ENV['VULTR_API_KEY']
-  end
-
-  def test_os_list_url
-    os_list_url = 'https://api.vultr.com/v1/os/list'
-    assert_equal os_list_url, Vultr::OS._list
   end
 
   def test_os_list_response
