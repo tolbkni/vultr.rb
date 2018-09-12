@@ -1,3 +1,11 @@
+== 0.4.0 / 2018-09-12
+
+* Update to the latest APIs.
+
+== 0.3.5 / 2018-08-14
+
+* Update dependencies.
+
 == 0.3.4 / 2017-09-26
 
 * Fix ReservedIP API
