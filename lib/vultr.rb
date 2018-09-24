@@ -579,7 +579,7 @@ module Vultr extend self
             list: {
                 :method => :get,
                 :path => '/v1/server/list',
-                :params => %w(SUBID tag),
+                :params => %w(SUBID tag label main_ip),
                 :apikey_required => true
             },
             list_ipv4: {
