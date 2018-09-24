@@ -826,9 +826,15 @@ module Vultr extend self
                     headers = apikey_required ? {'API-Key': Vultr::APIKey} : {}
                     body = nil
                     if method == :get
-                        url = Vultr.request.build_url(path, params)
+                        extra_params = Hash.new
+                        hash = args[-1]
+                        if hash.is_a?(Hash)
+                            hash.each do |key, value|
+                                extra_params[key] = value if params.include? key.to_s
+                            end
+                        end
+                        url = Vultr.request.build_url(path, extra_params)
                     elsif method == :post
-                        url = Vultr.request.build_url(path)
                         body = Hash.new
                         hash = args[-1]
                         if hash.is_a?(Hash)
@@ -836,6 +842,7 @@ module Vultr extend self
                                 body[key] = value if params.include? key.to_s
                             end
                         end
+                        url = Vultr.request.build_url(path)
                     end
 
                     resp = Vultr.request.run_request(method, url, body, headers)
