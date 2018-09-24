@@ -1,3 +1,8 @@
+== 0.4.1 / 2018-09-25
+
+* Make the params of Vultr::Server.list correct.
+* Fix #11, pass params to query string only giving their values.
+
 == 0.4.0 / 2018-09-12
 
 * Update to the latest APIs.
