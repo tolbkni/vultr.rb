@@ -356,7 +356,7 @@ module Vultr extend self
             list: {
                 :method => :get,
                 :path => '/v1/os/list',
-                :auth_required => false
+                :apikey_required => false
             }
         },
         # Plans
@@ -365,12 +365,12 @@ module Vultr extend self
                 :method => :get,
                 :path => '/v1/plans/list',
                 :params => %w(type),
-                :auth_required => true
+                :apikey_required => true
             },
             list_baremetal: {
                 :method => :get,
                 :path => '/v1/plans/list_baremetal',
-                :auth_required => true
+                :apikey_required => true
             },
             list_vc2: {
                 :method => :get,
@@ -460,55 +460,55 @@ module Vultr extend self
                 :method => :post,
                 :path => '/v1/server/app_change',
                 :params => %w(SUBID APPID),
-                :auth_required => true
+                :apikey_required => true
             },
             app_change_list: {
                 :method => :get,
                 :path => '/v1/server/app_change_list',
                 :params => ['SUBID'],
-                :auth_required => true
+                :apikey_required => true
             },
             backup_disable: {
                 :method => :post,
                 :path => '/v1/server/backup_disable',
                 :params => %w(SUBID),
-                :auth_required => true
+                :apikey_required => true
             },
             backup_enable: {
                 :method => :post,
                 :path => '/v1/server/backup_enable',
                 :params => %w(SUBID),
-                :auth_required => true
+                :apikey_required => true
             },
             backup_get_schedule: {
                 :method => :post,
                 :path => '/v1/server/backup_get_schedule',
                 :params => %w(SUBID),
-                :auth_required => true
+                :apikey_required => true
             },
             backup_set_schedule: {
                 :method => :post,
                 :path => '/v1/server/backup_set_schedule',
                 :params => %w(SUBID cron_type hour dow dom),
-                :auth_required => true
+                :apikey_required => true
             },
             bandwidth: {
                 :method => :get,
                 :path => '/v1/server/bandwidth',
                 :params => %w(SUBID),
-                :auth_required => true
+                :apikey_required => true
             },
             create: {
                 :method => :post,
                 :path => '/v1/server/create',
                 :params => %w(DCID VPSPLANID OSID ipxe_chain_url ISOID SCRIPTID SNAPSHOTID enable_ipv6 enable_private_network NETWORKID label SSHKEYID auto_backups APPID userdata notify_activate ddos_protection reserved_ip_v4 hostname tag FIREWALLGROUPID),
-                :auth_required => true
+                :apikey_required => true
             },
             create_ipv4: {
                 :method => :post,
                 :path => '/v1/server/create_ipv4',
                 :params => %w(SUBID reboot),
-                :auth_required => true
+                :apikey_required => true
             },
             destroy: {
                 :method => :post,
