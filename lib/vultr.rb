@@ -881,9 +881,7 @@ module Vultr extend self
             faraday.url_prefix = 'https://api.vultr.com'
             faraday.request :url_encoded
             faraday.response :json, :content_type => 'application/json'
-            faraday.adapter :net_http do |http| # yields Net::HTTP
-              http.timeout = 10
-            end
+            faraday.adapter :net_http
         end
     end
 end
