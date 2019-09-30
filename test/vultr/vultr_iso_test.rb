@@ -13,7 +13,12 @@ class VultrIsoTest < Minitest::Test
     assert r[:status], 200
 
     assert r.has_key? :result
-    assert_instance_of Hash, r[:result]
+
+    if r[:result].empty?
+      assert_instance_of Array, r[:result]
+    else
+      assert_instance_of Hash, r[:result]
+    end
   end
 
   def teardown
