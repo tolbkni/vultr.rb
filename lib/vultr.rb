@@ -757,7 +757,8 @@ module Vultr extend self
             update: {
                 :method => :post,
                 :path => '/v1/sshkey/update',
-                :params => %w(SSHKEYID name ssh_key)
+                :params => %w(SSHKEYID name ssh_key),
+                :apikey_required => true
             }
         },
         # Startup Script

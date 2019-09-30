@@ -7,7 +7,7 @@ class VultrRegionTest < Minitest::Test
   end
 
   def test_region_responses
-    r = Vultr::Region.list
+    r = Vultr::Regions.list
 
     assert r.has_key? :status
     assert_equal r[:status], 200
@@ -18,7 +18,7 @@ class VultrRegionTest < Minitest::Test
     k, v = r[:result].first
     dc_id = k.to_i
 
-    r = Vultr::Region.availability(DCID: dc_id)
+    r = Vultr::Regions.availability(DCID: dc_id)
 
     assert r.has_key? :status
     assert_equal r[:status], 200
