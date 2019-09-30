@@ -1,3 +1,7 @@
+== 0.4.2 / 2019-02-24
+
+* Fix parameter :auth_required to :apikey_required. Thanks nopdotcom.
+
 == 0.4.1 / 2018-09-25
 
 * Make the params of Vultr::Server.list correct.
