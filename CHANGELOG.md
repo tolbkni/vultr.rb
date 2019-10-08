@@ -1,3 +1,9 @@
+== 0.4.3 / 2019-10-8
+
+* Relaxed Faraday dependencies
+* Fixed sshkey update endpoint
+* Fixed ISO and regions tests
+
 == 0.4.2 / 2019-02-24
 
 * Fix parameter :auth_required to :apikey_required. Thanks nopdotcom.
