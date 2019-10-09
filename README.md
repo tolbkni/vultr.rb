@@ -1,6 +1,5 @@
 # VULTR Rubygem
 
-[![Waffle.io - Columns and their card count](https://badge.waffle.io/tolbkni/vultr.rb.svg?columns=all)](https://waffle.io/tolbkni/vultr.rb)
 [![Build Status](https://img.shields.io/travis/tolbkni/vultr.rb.svg)](https://travis-ci.org/tolbkni/vultr.rb)
 [![Gem Version](https://badge.fury.io/rb/vultr.svg)](https://badge.fury.io/rb/vultr)
 

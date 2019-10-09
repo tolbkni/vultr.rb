@@ -757,7 +757,8 @@ module Vultr extend self
             update: {
                 :method => :post,
                 :path => '/v1/sshkey/update',
-                :params => %w(SSHKEYID name ssh_key)
+                :params => %w(SSHKEYID name ssh_key),
+                :apikey_required => true
             }
         },
         # Startup Script
@@ -823,7 +824,7 @@ module Vultr extend self
                 apikey_required = config.fetch(:apikey_required, false)
 
                 define_singleton_method action do |*args|
-                    headers = apikey_required ? {'API-Key': Vultr::APIKey} : {}
+                    headers = apikey_required ? {'API-Key' => Vultr::APIKey} : {}
                     body = nil
                     if method == :get
                         extra_params = Hash.new
