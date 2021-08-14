@@ -21,6 +21,6 @@ Gem::Specification.new do |s|
 
   s.required_ruby_version = '>= 1.9'
 
-  s.add_dependency 'faraday', '>= 0.12.0', '< 1.0'
-  s.add_dependency 'faraday_middleware', '>= 0.12.0', '< 1.0'
+  s.add_dependency 'faraday', '~> 1.7'
+  #s.add_dependency 'faraday_middleware', '~> 1.1'
 end
