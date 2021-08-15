@@ -1,7 +1,7 @@
 module Vultr
   class InstancesResource < Resource
-    def list
-      response = get_request("instances")
+    def list(**params)
+      response = get_request("instances", params: params)
       Collection.from_response(response, key: "instances", type: Instance)
     end
 
@@ -54,16 +54,16 @@ module Vultr
     end
 
     def upgrades(id, **params)
-      Object.new get_request("instances/#{id}/upgrades", params).body.dig("upgrades")
+      Object.new get_request("instances/#{id}/upgrades", params: params).body.dig("upgrades")
     end
 
     def ipv4(id, **params)
-      response = get_request("instances/#{id}/ipv4", params)
+      response = get_request("instances/#{id}/ipv4", params: params)
       Collection.from_response(response, key: "ipv4s", type: Object)
     end
 
     def create_ipv4(id, **params)
-      Object.new post_request("instances/#{id}/ipv4", params).body.dig("ipv4")
+      Object.new post_request("instances/#{id}/ipv4", body: params).body.dig("ipv4")
     end
 
     def delete_ipv4(id, ipv4:)
@@ -71,15 +71,15 @@ module Vultr
     end
 
     def create_ipv4_reverse(id, **params)
-      post_request("instances/#{id}/ipv4/reverse", params)
+      post_request("instances/#{id}/ipv4/reverse", body: params)
     end
 
     def set_default_reverse_dns_entry(id, **params)
-      post_request("instances/#{id}/ipv4/reverse/default", params)
+      post_request("instances/#{id}/ipv4/reverse/default", body: params)
     end
 
     def ipv6(id, **params)
-      response = get_request("instances/#{id}/ipv6", params)
+      response = get_request("instances/#{id}/ipv6", params: params)
       Collection.from_response(response, key: "ipv6s", type: Object)
     end
 
@@ -89,24 +89,24 @@ module Vultr
     end
 
     def create_ipv6_reverse(id, **params)
-      post_request("instances/#{id}/ipv6/reverse", params)
+      post_request("instances/#{id}/ipv6/reverse", body: params)
     end
 
     def delete_ipv6_reverse(id, ipv6:)
       delete_request("instances/#{id}/ipv6/reverse/#{ipv6}")
     end
 
-    def private_networks(id)
-      response = get_request("instances/#{id}/private-networks")
+    def private_networks(id, **params)
+      response = get_request("instances/#{id}/private-networks", params: params)
       Collection.from_response(response, key: "private_networks", type: PrivateNetwork)
     end
 
     def attach_private_network(id, network_id:)
-      post_request("instances/#{id}/private-networks/attach", { network_id: network_id })
+      post_request("instances/#{id}/private-networks/attach", body: { network_id: network_id })
     end
 
     def detach_private_network(id, network_id:)
-      post_request("instances/#{id}/private-networks/detach", { network_id: network_id })
+      post_request("instances/#{id}/private-networks/detach", body: { network_id: network_id })
     end
 
     def iso(id)
@@ -114,11 +114,11 @@ module Vultr
     end
 
     def attach_iso(id, iso_id:)
-      Object.new post_request("instances/#{id}/iso/attach", { iso_id: iso_id }).body.dig("iso_status")
+      Object.new post_request("instances/#{id}/iso/attach", body: { iso_id: iso_id }).body.dig("iso_status")
     end
 
     def detach_iso(id, iso_id:)
-      Object.new post_request("instances/#{id}/iso/detach", { iso_id: iso_id }).body.dig("iso_status")
+      Object.new post_request("instances/#{id}/iso/detach", body: { iso_id: iso_id }).body.dig("iso_status")
     end
 
     def get_backup_schedule(id)
@@ -126,20 +126,20 @@ module Vultr
     end
 
     def set_backup_schedule(id, **attributes)
-      post_request("instances/#{id}/backup-schedule", attributes)
+      post_request("instances/#{id}/backup-schedule", body: attributes)
     end
 
     # Bulk operations
     def halt_instances(ids)
-      post_request("instances/halt", { instance_ids: Array(ids) })
+      post_request("instances/halt", body: { instance_ids: Array(ids) })
     end
 
     def reboot_instances(ids)
-      post_request("instances/reboot", { instance_ids: Array(ids) })
+      post_request("instances/reboot", body: { instance_ids: Array(ids) })
     end
 
     def start_instances(ids)
-      post_request("instances/start", { instance_ids: Array(ids) })
+      post_request("instances/start", body: { instance_ids: Array(ids) })
     end
   end
 end

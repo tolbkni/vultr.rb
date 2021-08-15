@@ -33,6 +33,10 @@ module Vultr
 
   autoload :Account, "vultr/objects/account"
   autoload :Application, "vultr/objects/application"
+  autoload :Backup, "vultr/objects/backup"
+  autoload :BareMetal, "vultr/objects/bare_metal"
+  autoload :BlockStorage, "vultr/objects/block_storage"
+  autoload :Domain, "vultr/objects/domain"
   autoload :Instance, "vultr/objects/instance"
   autoload :User, "vultr/objects/user"
 
