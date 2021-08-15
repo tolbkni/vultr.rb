@@ -10,5 +10,9 @@ module Vultr
       attribute = @attributes.send(method, *args, &block)
       attribute.is_a?(Hash) ? Object.new(attribute) : attribute
     end
+
+    def respond_to_missing?(method, include_private = false)
+      true
+    end
   end
 end
