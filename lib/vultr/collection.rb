@@ -5,7 +5,7 @@ module Vultr
     def self.from_response(response, key:, type:)
       body = response.body
       new(
-        data: body[key].map{ |attrs| type.new(attrs) },
+        data: body[key].map { |attrs| type.new(attrs) },
         total: body.dig("meta", "total"),
         next_cursor: body.dig("meta", "links", "next"),
         prev_cursor: body.dig("meta", "links", "prev")

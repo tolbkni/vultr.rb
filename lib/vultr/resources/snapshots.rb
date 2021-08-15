@@ -14,7 +14,7 @@ module Vultr
     end
 
     def create_from_url(url:)
-      Snapshot.new post_request("snapshots/create-from-url", body: { url: url }).body.dig("snapshot")
+      Snapshot.new post_request("snapshots/create-from-url", body: {url: url}).body.dig("snapshot")
     end
 
     def update(id, **attributes)

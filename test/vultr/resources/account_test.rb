@@ -7,4 +7,3 @@ class AccountResourceTest < Minitest::Test
   def test_retrieve
   end
 end
-

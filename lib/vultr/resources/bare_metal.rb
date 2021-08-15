@@ -65,15 +65,15 @@ module Vultr
 
     # Bulk operations
     def halt_instances(ids)
-      post_request("bare-metals/halt", body: { baremetal_ids: Array(ids) })
+      post_request("bare-metals/halt", body: {baremetal_ids: Array(ids)})
     end
 
     def reboot_instances(ids)
-      post_request("bare-metals/reboot", body: { baremetal_ids: Array(ids) })
+      post_request("bare-metals/reboot", body: {baremetal_ids: Array(ids)})
     end
 
     def start_instances(ids)
-      post_request("bare-metals/start", body: { baremetal_ids: Array(ids) })
+      post_request("bare-metals/start", body: {baremetal_ids: Array(ids)})
     end
   end
 end

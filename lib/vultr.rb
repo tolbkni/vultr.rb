@@ -1,6 +1,6 @@
-require 'faraday'
-require 'faraday_middleware'
-require 'vultr/version'
+require "faraday"
+require "faraday_middleware"
+require "vultr/version"
 
 module Vultr
   autoload :Client, "vultr/client"

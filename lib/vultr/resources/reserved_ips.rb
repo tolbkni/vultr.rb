@@ -18,7 +18,7 @@ module Vultr
     end
 
     def attach(id, reserved_ip:)
-      post_request("reserved-ips/#{id}/attach", body: { reserved_ip: reserved_ip })
+      post_request("reserved-ips/#{id}/attach", body: {reserved_ip: reserved_ip})
     end
 
     def detach(id)

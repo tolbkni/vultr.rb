@@ -5,7 +5,7 @@ module Vultr
     attr_reader :api_key, :adapter
 
     def initialize(api_key: Vultr.api_key, adapter: Faraday.default_adapter)
-      #raise Error, "Please set Vultr.api_key = 'xxx' to make a request" unless api_key
+      # raise Error, "Please set Vultr.api_key = 'xxx' to make a request" unless api_key
       @api_key = api_key
       @adapter = adapter
     end
@@ -98,7 +98,7 @@ module Vultr
       @connection ||= Faraday.new do |conn|
         conn.url_prefix = BASE_URL
         conn.request :json
-        conn.response :json, content_type: 'application/json'
+        conn.response :json, content_type: "application/json"
         conn.adapter adapter
       end
     end

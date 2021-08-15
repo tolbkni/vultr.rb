@@ -6,6 +6,6 @@ class ObjectTest < Minitest::Test
   end
 
   def test_nested_hash
-    assert_equal :foobar, Vultr::Object.new(foo: { bar: { baz: :foobar } }).foo.bar.baz
+    assert_equal :foobar, Vultr::Object.new(foo: {bar: {baz: :foobar}}).foo.bar.baz
   end
 end

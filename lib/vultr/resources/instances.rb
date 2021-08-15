@@ -102,11 +102,11 @@ module Vultr
     end
 
     def attach_private_network(id, network_id:)
-      post_request("instances/#{id}/private-networks/attach", body: { network_id: network_id })
+      post_request("instances/#{id}/private-networks/attach", body: {network_id: network_id})
     end
 
     def detach_private_network(id, network_id:)
-      post_request("instances/#{id}/private-networks/detach", body: { network_id: network_id })
+      post_request("instances/#{id}/private-networks/detach", body: {network_id: network_id})
     end
 
     def iso(id)
@@ -114,11 +114,11 @@ module Vultr
     end
 
     def attach_iso(id, iso_id:)
-      Object.new post_request("instances/#{id}/iso/attach", body: { iso_id: iso_id }).body.dig("iso_status")
+      Object.new post_request("instances/#{id}/iso/attach", body: {iso_id: iso_id}).body.dig("iso_status")
     end
 
     def detach_iso(id, iso_id:)
-      Object.new post_request("instances/#{id}/iso/detach", body: { iso_id: iso_id }).body.dig("iso_status")
+      Object.new post_request("instances/#{id}/iso/detach", body: {iso_id: iso_id}).body.dig("iso_status")
     end
 
     def get_backup_schedule(id)
@@ -131,15 +131,15 @@ module Vultr
 
     # Bulk operations
     def halt_instances(ids)
-      post_request("instances/halt", body: { instance_ids: Array(ids) })
+      post_request("instances/halt", body: {instance_ids: Array(ids)})
     end
 
     def reboot_instances(ids)
-      post_request("instances/reboot", body: { instance_ids: Array(ids) })
+      post_request("instances/reboot", body: {instance_ids: Array(ids)})
     end
 
     def start_instances(ids)
-      post_request("instances/start", body: { instance_ids: Array(ids) })
+      post_request("instances/start", body: {instance_ids: Array(ids)})
     end
   end
 end
