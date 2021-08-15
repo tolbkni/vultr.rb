@@ -121,7 +121,7 @@ module Vultr
       Object.new post_request("instances/#{id}/iso/detach", body: {iso_id: iso_id}).body.dig("iso_status")
     end
 
-    def get_backup_schedule(id)
+    def backup_schedule(id)
       Object.new get_request("instances/#{id}/backup-schedule").body.dig("backup_schedule")
     end
 
