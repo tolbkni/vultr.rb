@@ -1,12 +1,12 @@
 module Vultr
   class UserResource < Resource
-    def list(params: {})
+    def list(**params)
       response = get_request("users", params: params)
       Collection.from_response(response, key: "users", type: User)
     end
 
     def retrieve(id)
-      User.new get_request("users/#{id}").body
+      User.new get_request("users/#{id}").body.dig("user")
     end
 
     def create(**attributes)

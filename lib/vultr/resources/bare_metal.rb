@@ -6,7 +6,7 @@ module Vultr
     end
 
     def retrieve(id)
-      BareMetal.new get_request("bare-metals/#{id}")
+      BareMetal.new get_request("bare-metals/#{id}").body.dig("bare_metal")
     end
 
     def create(**attributes)
@@ -53,12 +53,12 @@ module Vultr
       Object.new get_request("bare-metals/#{id}/vnc", params: params).body.dig("vnc")
     end
 
-    def ipv4(id, **params)
+    def list_ipv4(id, **params)
       response = get_request("bare-metals/#{id}/ipv4", params: params)
       Collection.from_response(response, key: "ipv4s", type: Object)
     end
 
-    def ipv6(id, **params)
+    def list_ipv6(id, **params)
       response = get_request("bare-metals/#{id}/ipv6", params: params)
       Collection.from_response(response, key: "ipv6s", type: Object)
     end
@@ -77,4 +77,3 @@ module Vultr
     end
   end
 end
-

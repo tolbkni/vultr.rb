@@ -57,7 +57,7 @@ module Vultr
       Object.new get_request("instances/#{id}/upgrades", params: params).body.dig("upgrades")
     end
 
-    def ipv4(id, **params)
+    def list_ipv4(id, **params)
       response = get_request("instances/#{id}/ipv4", params: params)
       Collection.from_response(response, key: "ipv4s", type: Object)
     end
@@ -78,7 +78,7 @@ module Vultr
       post_request("instances/#{id}/ipv4/reverse/default", body: params)
     end
 
-    def ipv6(id, **params)
+    def list_ipv6(id, **params)
       response = get_request("instances/#{id}/ipv6", params: params)
       Collection.from_response(response, key: "ipv6s", type: Object)
     end
@@ -96,7 +96,7 @@ module Vultr
       delete_request("instances/#{id}/ipv6/reverse/#{ipv6}")
     end
 
-    def private_networks(id, **params)
+    def list_private_networks(id, **params)
       response = get_request("instances/#{id}/private-networks", params: params)
       Collection.from_response(response, key: "private_networks", type: PrivateNetwork)
     end

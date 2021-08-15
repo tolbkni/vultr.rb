@@ -6,7 +6,7 @@ module Vultr
     end
 
     def retrieve(id)
-      Domain.new get_request("domains/#{id}")
+      Domain.new get_request("domains/#{id}").body.dig("domain")
     end
 
     def create(**attributes)
@@ -33,7 +33,7 @@ module Vultr
       Object.new get_request("domains/#{id}/dnssec").body.dig("dns_sec")
     end
 
-    def records(id, **params)
+    def list_records(id, **params)
       response = get_request("domains/#{id}/records", params: params)
       Collection.from_response(response, key: "records", type: Object)
     end
@@ -55,4 +55,3 @@ module Vultr
     end
   end
 end
-

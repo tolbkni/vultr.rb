@@ -6,7 +6,7 @@ module Vultr
     end
 
     def retrieve(id)
-      BlockStorage.new get_request("blocks/#{id}")
+      BlockStorage.new get_request("blocks/#{id}").body.dig("block")
     end
 
     def create(**attributes)

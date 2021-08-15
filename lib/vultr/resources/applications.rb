@@ -6,4 +6,3 @@ module Vultr
     end
   end
 end
-
