@@ -5,58 +5,58 @@ module Vultr
       Collection.from_response(response, key: "vke_clusters", type: KubernetesCluster)
     end
 
-    def retrieve(id)
-      KubernetesCluster.new get_request("kubernetes/clusters/#{id}").body.dig("vke_cluster")
-    end
-
     def create(**attributes)
       KubernetesCluster.new post_request("kubernetes/clusters", body: attributes).body.dig("vke_cluster")
     end
 
-    def update(id, **attributes)
-      put_request("kubernetes/clusters/#{id}", body: attributes)
+    def retrieve(vke_id:)
+      KubernetesCluster.new get_request("kubernetes/clusters/#{vke_id}").body.dig("vke_cluster")
     end
 
-    def delete(id)
-      delete_request("kubernetes/clusters/#{id}")
+    def update(vke_id:, **attributes)
+      put_request("kubernetes/clusters/#{vke_id}", body: attributes)
     end
 
-    def config(id)
-      Object.new get_request("kubernetes/clusters/#{id}/config").body
+    def delete(vke_id:)
+      delete_request("kubernetes/clusters/#{vke_id}")
     end
 
-    def list_resources(id, **params)
-      response = get_request("kubernetes/clusters/#{id}/resources", params: params)
+    def config(vke_id:)
+      Object.new get_request("kubernetes/clusters/#{vke_id}/config").body
+    end
+
+    def list_resources(vke_id:, **params)
+      response = get_request("kubernetes/clusters/#{vke_id}/resources", params: params)
       Collection.from_response(response, key: "resources", type: Object)
     end
 
-    def list_node_pools(id, **params)
-      response = get_request("kubernetes/clusters/#{id}/node-pools", params: params)
+    def list_node_pools(vke_id:, **params)
+      response = get_request("kubernetes/clusters/#{vke_id}/node-pools", params: params)
       Collection.from_response(response, key: "node_pools", type: Object)
     end
 
-    def retrieve_node_pool(id, nodepool_id:)
-      Object.new get_request("kubernetes/clusters/#{id}/node-pools/#{nodepool_id}").body.dig("node_pool")
+    def retrieve_node_pool(vke_id:, nodepool_id:)
+      Object.new get_request("kubernetes/clusters/#{vke_id}/node-pools/#{nodepool_id}").body.dig("node_pool")
     end
 
-    def create_node_pool(id, **attributes)
-      Object.new post_request("kubernetes/clusters/#{id}/node-pools", body: attributes).body.dig("node_pool")
+    def create_node_pool(vke_id:, **attributes)
+      Object.new post_request("kubernetes/clusters/#{vke_id}/node-pools", body: attributes).body.dig("node_pool")
     end
 
-    def update_node_pool(id, nodepool_id:, **attributes)
-      Object.new patch_request("kubernetes/clusters/#{id}/node-pools/#{nodepool_id}", body: attributes).body.dig("node_pool")
+    def update_node_pool(vke_id:, nodepool_id:, **attributes)
+      Object.new patch_request("kubernetes/clusters/#{vke_id}/node-pools/#{nodepool_id}", body: attributes).body.dig("node_pool")
     end
 
-    def delete_node_pool(id, nodepool_id:)
-      delete_request("kubernetes/clusters/#{id}/node-pools/#{nodepool_id}")
+    def delete_node_pool(vke_id:, nodepool_id:)
+      delete_request("kubernetes/clusters/#{vke_id}/node-pools/#{nodepool_id}")
     end
 
-    def delete_node_pool_instance(id, nodepool_id:, node_id:)
-      delete_request("kubernetes/clusters/#{id}/node-pools/#{nodepool_id}/nodes/#{node_id}")
+    def delete_node_pool_instance(vke_id:, nodepool_id:, node_id:)
+      delete_request("kubernetes/clusters/#{vke_id}/node-pools/#{nodepool_id}/nodes/#{node_id}")
     end
 
-    def recycle_node_pool_instance(id, nodepool_id:, node_id:)
-      post_request("kubernetes/clusters/#{id}/node-pools/#{nodepool_id}/nodes/#{node_id}/recycle")
+    def recycle_node_pool_instance(vke_id:, nodepool_id:, node_id:)
+      post_request("kubernetes/clusters/#{vke_id}/node-pools/#{nodepool_id}/nodes/#{node_id}/recycle")
     end
   end
 end

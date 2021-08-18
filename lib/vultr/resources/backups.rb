@@ -5,8 +5,8 @@ module Vultr
       Collection.from_response(response, key: "backups", type: Backup)
     end
 
-    def retrieve(id)
-      Backup.new get_request("backups/#{id}").body.dig("backup")
+    def retrieve(backup_id:)
+      Backup.new get_request("backups/#{backup_id}").body.dig("backup")
     end
   end
 end

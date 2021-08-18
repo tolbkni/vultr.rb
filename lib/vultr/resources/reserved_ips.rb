@@ -5,24 +5,24 @@ module Vultr
       Collection.from_response(response, key: "reserved_ips", type: ReservedIp)
     end
 
-    def retrieve(id)
-      ReservedIp.new get_request("reserved-ips/#{id}").body.dig("reserved_ip")
-    end
-
     def create(**attributes)
       ReservedIp.new post_request("reserved-ips", body: attributes).body.dig("reserved_ip")
     end
 
-    def delete(id)
-      delete_request("reserved-ips/#{id}")
+    def retrieve(reserved_ip:)
+      ReservedIp.new get_request("reserved-ips/#{reserved_ip}").body.dig("reserved_ip")
     end
 
-    def attach(id, reserved_ip:)
-      post_request("reserved-ips/#{id}/attach", body: {reserved_ip: reserved_ip})
+    def delete(reserved_ip:)
+      delete_request("reserved-ips/#{reserved_ip}")
     end
 
-    def detach(id)
-      post_request("reserved-ips/#{id}/detach")
+    def attach(reserved_ip:, instance_id:)
+      post_request("reserved-ips/#{reserved_ip}/attach", body: {instance_id: instance_id})
+    end
+
+    def detach(reserved_ip:)
+      post_request("reserved-ips/#{reserved_ip}/detach")
     end
 
     def convert(**attributes)

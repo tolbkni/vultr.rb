@@ -5,53 +5,53 @@ module Vultr
       Collection.from_response(response, key: "domains", type: Domain)
     end
 
-    def retrieve(id)
-      Domain.new get_request("domains/#{id}").body.dig("domain")
-    end
-
     def create(**attributes)
       Domain.new post_request("domains", body: attributes).body.dig("domain")
     end
 
-    def update(id, **attributes)
-      patch_request("domains/#{id}", body: attributes)
+    def retrieve(dns_domain:)
+      Domain.new get_request("domains/#{dns_domain}").body.dig("domain")
     end
 
-    def delete(id)
-      delete_request("domains/#{id}")
+    def update(dns_domain:, **attributes)
+      patch_request("domains/#{dns_domain}", body: attributes)
     end
 
-    def soa(id)
-      Object.new get_request("domains/#{id}/soa").body.dig("dns_soa")
+    def delete(dns_domain:)
+      delete_request("domains/#{dns_domain}")
     end
 
-    def update_soa(id, **attributes)
-      post_request("domains/#{id}/soa", body: attributes)
+    def soa(dns_domain:)
+      Object.new get_request("domains/#{dns_domain}/soa").body.dig("dns_soa")
     end
 
-    def dnssec(id)
-      Object.new get_request("domains/#{id}/dnssec").body.dig("dns_sec")
+    def update_soa(dns_domain:, **attributes)
+      post_request("domains/#{dns_domain}/soa", body: attributes)
     end
 
-    def list_records(id, **params)
-      response = get_request("domains/#{id}/records", params: params)
+    def dnssec(dns_domain:)
+      Object.new get_request("domains/#{dns_domain}/dnssec").body.dig("dns_sec")
+    end
+
+    def list_records(dns_domain:, **params)
+      response = get_request("domains/#{dns_domain}/records", params: params)
       Collection.from_response(response, key: "records", type: Object)
     end
 
-    def retrieve_record(id, record_id:)
-      Object.new get_request("domains/#{id}/records/#{record_id}").body.dig("record")
+    def create_record(dns_domain:, **attributes)
+      Object.new post_request("domains/#{dns_domain}/records", body: attributes).body.dig("record")
     end
 
-    def create_record(id, **attributes)
-      Object.new post_request("domains/#{id}/records", body: attributes).body.dig("record")
+    def retrieve_record(dns_domain:, record_id:)
+      Object.new get_request("domains/#{dns_domain}/records/#{record_id}").body.dig("record")
     end
 
-    def update_record(id, record_id:, **attributes)
-      patch_request("domains/#{id}/records/#{record_id}", body: attributes)
+    def update_record(dns_domain:, record_id:, **attributes)
+      patch_request("domains/#{dns_domain}/records/#{record_id}", body: attributes)
     end
 
-    def delete_record(id, record_id:)
-      delete_request("domains/#{id}/records/#{record_id}")
+    def delete_record(dns_domain:, record_id:)
+      delete_request("domains/#{dns_domain}/records/#{record_id}")
     end
   end
 end

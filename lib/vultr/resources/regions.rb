@@ -5,8 +5,8 @@ module Vultr
       Collection.from_response(response, key: "regions", type: Region)
     end
 
-    def list_availability(id)
-      Object.new get_request("regions/#{id}/availability").body
+    def list_availability(region_id:)
+      Object.new get_request("regions/#{region_id}/availability").body
     end
   end
 end

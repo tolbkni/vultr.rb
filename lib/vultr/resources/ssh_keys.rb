@@ -5,20 +5,20 @@ module Vultr
       Collection.from_response(response: response, key: "ssh_keys", type: SshKey)
     end
 
-    def retrieve(id)
-      SshKey.new get_request("ssh-keys/#{id}").body.dig("ssh_key")
-    end
-
     def create(**attributes)
       SshKey.new post_request("ssh-keys", body: attributes).body.dig("ssh_key")
     end
 
-    def update(id, **attributes)
-      patch_request("ssh-keys/#{id}", body: attributes)
+    def retrieve(ssh_key_id:)
+      SshKey.new get_request("ssh-keys/#{ssh_key_id}").body.dig("ssh_key")
     end
 
-    def delete(id)
-      delete_request("ssh-keys/#{id}")
+    def update(ssh_key_id:, **attributes)
+      patch_request("ssh-keys/#{ssh_key_id}", body: attributes)
+    end
+
+    def delete(ssh_key_id:)
+      delete_request("ssh-keys/#{ssh_key_id}")
     end
   end
 end

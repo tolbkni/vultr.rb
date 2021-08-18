@@ -5,38 +5,38 @@ module Vultr
       Collection.from_response(response: response, key: "firewall_groups", type: FirewallGroup)
     end
 
-    def retrieve(id)
-      FirewallGroup.new get_request("firewalls/#{id}").body.dig("firewall_group")
-    end
-
     def create(**attributes)
       FirewallGroup.new post_request("firewalls", body: attributes).body.dig("firewall_group")
     end
 
-    def update(id, **attributes)
-      put_request("firewalls/#{id}", body: attributes)
+    def retrieve(firewall_group_id:)
+      FirewallGroup.new get_request("firewalls/#{firewall_group_id}").body.dig("firewall_group")
     end
 
-    def delete(id)
-      delete_request("firewalls/#{id}")
+    def update(firewall_group_id:, **attributes)
+      put_request("firewalls/#{firewall_group_id}", body: attributes)
+    end
+
+    def delete(firewall_group_id:)
+      delete_request("firewalls/#{firewall_group_id}")
     end
 
     # Firewall Rules
-    def list_rules(id, **params)
-      response = get_request("firewalls/#{id}/rules", params: params)
+    def list_rules(firewall_group_id:, **params)
+      response = get_request("firewalls/#{firewall_group_id}/rules", params: params)
       Collection.from_response(response: response, key: "firewall_rules", type: Object)
     end
 
-    def retrieve_rule(id, rule_id:)
-      Object.new get_request("firewalls/#{id}/rules/#{rule_id}").body.dig("firewall_rule")
+    def create_rule(firewall_group_id:, **attributes)
+      Object.new post_request("firewalls/#{firewall_group_id}/rules", body: attributes).body.dig("firewall_rule")
     end
 
-    def create_rule(id, **attributes)
-      Object.new post_request("firewalls/#{id}/rules", body: attributes).body.dig("firewall_rule")
+    def retrieve_rule(firewall_group_id:, firewall_rule_id:)
+      Object.new get_request("firewalls/#{firewall_group_id}/rules/#{firewall_rule_id}").body.dig("firewall_rule")
     end
 
-    def delete_rule(id, rule_id:)
-      delete_request("firewalls/#{id}/rules/#{rule_id}")
+    def delete_rule(firewall_group_id:, firewall_rule_id:)
+      delete_request("firewalls/#{firewall_group_id}/rules/#{firewall_rule_id}")
     end
   end
 end

@@ -5,16 +5,16 @@ module Vultr
       Collection.from_response(response, key: "isos", type: Iso)
     end
 
-    def retrieve(id)
-      Iso.new get_request("isos/#{id}").body.dig("iso")
-    end
-
     def create(**attributes)
       Iso.new post_request("isos", body: attributes).body.dig("iso")
     end
 
-    def delete(id)
-      delete_request("isos/#{id}")
+    def retrieve(iso_id:)
+      Iso.new get_request("isos/#{iso_id}").body.dig("iso")
+    end
+
+    def delete(iso_id:)
+      delete_request("isos/#{iso_id}")
     end
 
     def list_public(**params)

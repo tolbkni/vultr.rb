@@ -5,75 +5,75 @@ module Vultr
       Collection.from_response(response, key: "bare_metals", type: BareMetal)
     end
 
-    def retrieve(id)
-      BareMetal.new get_request("bare-metals/#{id}").body.dig("bare_metal")
-    end
-
     def create(**attributes)
       BareMetal.new post_request("bare-metals", body: attributes).body.dig("bare_metal")
     end
 
-    def update(id, **attributes)
-      BareMetal.new patch_request("bare-metals/#{id}", body: attributes).body.dig("bare_metal")
+    def retrieve(baremetal_id:)
+      BareMetal.new get_request("bare-metals/#{baremetal_id}").body.dig("bare_metal")
     end
 
-    def delete(id)
-      delete_request("bare-metals/#{id}")
+    def update(baremetal_id:, **attributes)
+      BareMetal.new patch_request("bare-metals/#{baremetal_id}", body: attributes).body.dig("bare_metal")
     end
 
-    def start(id)
-      post_request("bare-metals/#{id}/start")
+    def delete(baremetal_id:)
+      delete_request("bare-metals/#{baremetal_id}")
     end
 
-    def reboot(id)
-      post_request("bare-metals/#{id}/reboot")
+    def start(baremetal_id:)
+      post_request("bare-metals/#{baremetal_id}/start")
     end
 
-    def reinstall(id)
-      BareMetal.new post_request("bare-metals/#{id}/reinstall").body.dig("bare_metal")
+    def reboot(baremetal_id:)
+      post_request("bare-metals/#{baremetal_id}/reboot")
     end
 
-    def halt(id)
-      post_request("bare-metals/#{id}/halt")
+    def reinstall(baremetal_id:)
+      BareMetal.new post_request("bare-metals/#{baremetal_id}/reinstall").body.dig("bare_metal")
     end
 
-    def bandwidth(id)
-      Object.new get_request("bare-metals/#{id}/bandwidth").body.dig("bandwidth")
+    def halt(baremetal_id:)
+      post_request("bare-metals/#{baremetal_id}/halt")
     end
 
-    def user_data(id)
-      Object.new get_request("bare-metals/#{id}/user-data").body.dig("user_data")
+    def bandwidth(baremetal_id:)
+      Object.new get_request("bare-metals/#{baremetal_id}/bandwidth").body.dig("bandwidth")
     end
 
-    def upgrades(id, **params)
-      Object.new get_request("bare-metals/#{id}/upgrades", params: params).body.dig("upgrades")
+    def user_data(baremetal_id:)
+      Object.new get_request("bare-metals/#{baremetal_id}/user-data").body.dig("user_data")
     end
 
-    def vnc(id)
-      Object.new get_request("bare-metals/#{id}/vnc", params: params).body.dig("vnc")
+    def upgrades(baremetal_id:, **params)
+      Object.new get_request("bare-metals/#{baremetal_id}/upgrades", params: params).body.dig("upgrades")
     end
 
-    def list_ipv4(id, **params)
-      response = get_request("bare-metals/#{id}/ipv4", params: params)
+    def vnc(baremetal_id:)
+      Object.new get_request("bare-metals/#{baremetal_id}/vnc", params: params).body.dig("vnc")
+    end
+
+    def list_ipv4(baremetal_id:, **params)
+      response = get_request("bare-metals/#{baremetal_id}/ipv4", params: params)
       Collection.from_response(response, key: "ipv4s", type: Object)
     end
 
-    def list_ipv6(id, **params)
-      response = get_request("bare-metals/#{id}/ipv6", params: params)
+    def list_ipv6(baremetal_id:, **params)
+      response = get_request("bare-metals/#{baremetal_id}/ipv6", params: params)
       Collection.from_response(response, key: "ipv6s", type: Object)
     end
 
     # Bulk operations
-    def halt_instances(ids)
-      post_request("bare-metals/halt", body: {baremetal_ids: Array(ids)})
+    def halt_instances(baremetal_ids:)
+      post_request("bare-metals/halt", body: {baremetal_ids: Array(baremetal_ids)})
     end
 
-    def reboot_instances(ids)
-      post_request("bare-metals/reboot", body: {baremetal_ids: Array(ids)})
+    def reboot_instances(baremetal_ids:)
+      post_request("bare-metals/reboot", body: {baremetal_ids: Array(baremetal_ids)})
     end
 
-    def start_instances(ids)
-      post_request("bare-metals/start", body: {baremetal_ids: Array(ids)})
+    def start_instances(baremetal_ids:)
+      post_request("bare-metals/start", body: {baremetal_ids: Array(baremetal_ids)})
     end
   end
 end
