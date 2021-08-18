@@ -4,8 +4,7 @@ module Vultr
 
     attr_reader :api_key, :adapter
 
-    def initialize(api_key: Vultr.api_key, adapter: Faraday.default_adapter)
-      # raise Error, "Please set Vultr.api_key = 'xxx' to make a request" unless api_key
+    def initialize(api_key:, adapter: Faraday.default_adapter)
       @api_key = api_key
       @adapter = adapter
     end

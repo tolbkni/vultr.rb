@@ -54,12 +54,4 @@ module Vultr
   autoload :SshKey, "vultr/objects/ssh_key"
   autoload :StartupScript, "vultr/objects/startup_script"
   autoload :User, "vultr/objects/user"
-
-  def self.api_key=(key)
-    @api_key = key
-  end
-
-  def self.api_key
-    @api_key
-  end
 end
