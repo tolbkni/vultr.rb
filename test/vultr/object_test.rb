@@ -8,4 +8,8 @@ class ObjectTest < Minitest::Test
   def test_nested_hash
     assert_equal "foobar", Vultr::Object.new(foo: {bar: {baz: :foobar}}).foo.bar.baz
   end
+
+  def test_nested_number
+    assert_equal 1, Vultr::Object.new(foo: {bar: 1}).foo.bar
+  end
 end
