@@ -1,18 +1,11 @@
 require "ostruct"
+require "delegate"
+require "json"
 
 module Vultr
-  class Object
+  class Object < SimpleDelegator
     def initialize(attributes)
-      @attributes = OpenStruct.new(attributes)
-    end
-
-    def method_missing(method, *args, &block)
-      attribute = @attributes.send(method, *args, &block)
-      attribute.is_a?(Hash) ? Object.new(attribute) : attribute
-    end
-
-    def respond_to_missing?(method, include_private = false)
-      true
+      super(JSON.parse(attributes.to_json, object_class: OpenStruct))
     end
   end
 end
