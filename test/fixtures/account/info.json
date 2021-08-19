@@ -1,0 +1,11 @@
+{
+  "account": {
+    "name": "Example Account",
+    "email": "admin@example.com",
+    "acls": [],
+    "balance": -100,
+    "pending_charges": 60,
+    "last_payment_date": "2020-10-10T01:56:20+00:00",
+    "last_payment_amount": -1
+  }
+}
