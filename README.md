@@ -1,9 +1,9 @@
-# VULTR Rubygem
+# Vultr API Rubygem
 
 [![Build Status](https://img.shields.io/travis/tolbkni/vultr.rb.svg)](https://travis-ci.org/tolbkni/vultr.rb)
 [![Gem Version](https://badge.fury.io/rb/vultr.svg)](https://badge.fury.io/rb/vultr)
 
-The easiest and most complete rubygem for [VULTR](https://www.vultr.com) [API v2](https://www.vultr.com/api/v2).
+The easiest and most complete rubygem for [Vultr](https://www.vultr.com). Currently supports [API v2](https://www.vultr.com/api/v2).
 
 ## Installation
 
