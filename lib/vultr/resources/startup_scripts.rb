@@ -2,7 +2,7 @@ module Vultr
   class StartupScriptsResource < Resource
     def list(**params)
       response = get_request("startup-scripts", params: params)
-      Collection.from_response(response: response, key: "startup_scripts", type: StartupScript)
+      Collection.from_response(response, key: "startup_scripts", type: StartupScript)
     end
 
     def create(**attributes)
