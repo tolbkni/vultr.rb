@@ -2,7 +2,7 @@ module Vultr
   class SshKeysResource < Resource
     def list(**params)
       response = get_request("ssh-keys", params: params)
-      Collection.from_response(response: response, key: "ssh_keys", type: SshKey)
+      Collection.from_response(response, key: "ssh_keys", type: SshKey)
     end
 
     def create(**attributes)

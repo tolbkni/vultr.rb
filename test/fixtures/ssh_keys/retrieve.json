@@ -1,0 +1,8 @@
+{
+  "ssh_key": {
+    "id": "3b8066a7-b438-455a-9688-44afc9a3597f",
+    "date_created": "2020-10-10T01:56:20+00:00",
+    "name": "Example SSH Key",
+    "ssh_key": "ssh-rsa AA... user@example.com"
+  }
+}
