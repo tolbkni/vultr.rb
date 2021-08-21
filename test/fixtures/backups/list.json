@@ -1,0 +1,18 @@
+{
+  "backups": [
+    {
+      "id": "cb676a46-66fd-4dfb-b839-443f2e6c0b60",
+      "date_created": "2020-10-10T01:56:20+00:00",
+      "description": "Example Automatic Backup",
+      "size": 10000000,
+      "status": "complete"
+    }
+  ],
+  "meta": {
+    "total": 1,
+    "links": {
+      "next": "",
+      "prev": ""
+    }
+  }
+}
