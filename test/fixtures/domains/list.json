@@ -1,0 +1,15 @@
+{
+  "domains": [
+    {
+      "domain": "example.com",
+      "date_created": "2020-10-10T01:56:20+00:00"
+    }
+  ],
+  "meta": {
+    "total": 1,
+    "links": {
+      "next": "next",
+      "prev": "prev"
+    }
+  }
+}

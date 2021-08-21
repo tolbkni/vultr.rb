@@ -14,7 +14,7 @@ module Vultr
     end
 
     def update(dns_domain:, **attributes)
-      patch_request("domains/#{dns_domain}", body: attributes)
+      put_request("domains/#{dns_domain}", body: attributes)
     end
 
     def delete(dns_domain:)
@@ -26,7 +26,7 @@ module Vultr
     end
 
     def update_soa(dns_domain:, **attributes)
-      post_request("domains/#{dns_domain}/soa", body: attributes)
+      patch_request("domains/#{dns_domain}/soa", body: attributes)
     end
 
     def dnssec(dns_domain:)
