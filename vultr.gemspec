@@ -6,7 +6,7 @@ require "vultr/version"
 
 Gem::Specification.new do |s|
   s.name = "vultr"
-  s.version = Vultr::VERSION::STRING
+  s.version = Vultr::VERSION
   s.authors = ["Gao Jiangmiao"]
   s.email = ["tolbkni@gmail.com"]
   s.summary = "Ruby bindings for VULTR API."
