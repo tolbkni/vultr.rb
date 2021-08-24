@@ -22,7 +22,7 @@ module Vultr
     end
 
     def detach(reserved_ip:)
-      post_request("reserved-ips/#{reserved_ip}/detach")
+      post_request("reserved-ips/#{reserved_ip}/detach", body: {})
     end
 
     def convert(**attributes)
