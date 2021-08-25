@@ -19,7 +19,7 @@ Gem::Specification.new do |s|
   s.test_files = s.files.grep(%r{^(test|spec|features)/})
   s.require_paths = ["lib"]
 
-  s.required_ruby_version = ">= 1.9"
+  s.required_ruby_version = ">= 2.4"
 
   s.add_dependency "faraday", "~> 1.7"
   s.add_dependency "faraday_middleware", "~> 1.1"
