@@ -6,15 +6,15 @@ module Vultr
     end
 
     def create(**attributes)
-      Iso.new post_request("isos", body: attributes).body.dig("iso")
+      Iso.new post_request("iso", body: attributes).body.dig("iso")
     end
 
     def retrieve(iso_id:)
-      Iso.new get_request("isos/#{iso_id}").body.dig("iso")
+      Iso.new get_request("iso/#{iso_id}").body.dig("iso")
     end
 
     def delete(iso_id:)
-      delete_request("isos/#{iso_id}")
+      delete_request("iso/#{iso_id}")
     end
 
     def list_public(**params)
