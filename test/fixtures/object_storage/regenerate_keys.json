@@ -1,0 +1,7 @@
+{
+  "s3_credentials": {
+    "s3_hostname": "ewr1.vultrobjects.com",
+    "s3_access_key": "00example11223344",
+    "s3_secret_key": "00example1122334455667788990011"
+  }
+}
