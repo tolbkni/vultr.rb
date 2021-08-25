@@ -46,6 +46,8 @@ module Vultr
         raise Error, "Your request exceeded the API rate limit. #{response.body["error"]}"
       when 500
         raise Error, "We were unable to perform the request due to server-side problems. #{response.body["error"]}"
+      when 503
+        raise Error, "You have been rate limited for sending more than 20 requests per second. #{response.body["error"]}"
       end
 
       response
