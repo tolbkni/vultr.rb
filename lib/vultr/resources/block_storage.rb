@@ -25,7 +25,7 @@ module Vultr
       post_request("blocks/#{block_id}/attach", body: params)
     end
 
-    def detach(block_id:)
+    def detach(block_id:, **params)
       post_request("blocks/#{block_id}/detach", body: params)
     end
   end
