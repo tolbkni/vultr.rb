@@ -29,8 +29,9 @@ module Vultr
       patch_request("domains/#{dns_domain}/soa", body: attributes)
     end
 
+    # Returns an Array of strings
     def dnssec(dns_domain:)
-      Object.new get_request("domains/#{dns_domain}/dnssec").body.dig("dns_sec")
+      get_request("domains/#{dns_domain}/dnssec").body.dig("dns_sec")
     end
 
     def list_records(dns_domain:, **params)
