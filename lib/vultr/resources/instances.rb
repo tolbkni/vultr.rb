@@ -10,7 +10,7 @@ module Vultr
     end
 
     def retrieve(instance_id:)
-      Instance.new get_request("instances/#{instance_id}").body
+      Instance.new get_request("instances/#{instance_id}").body.dig("instance")
     end
 
     def update(instance_id:, **attributes)
@@ -21,24 +21,24 @@ module Vultr
       delete_request("instances/#{instance_id}")
     end
 
-    def start(instance_id:)
-      post_request("instances/#{instance_id}/start")
+    def start(instance_id:, **attributes)
+      post_request("instances/#{instance_id}/start", body: attributes)
     end
 
-    def reboot(instance_id:)
-      post_request("instances/#{instance_id}/reboot")
+    def reboot(instance_id:, **attributes)
+      post_request("instances/#{instance_id}/reboot", body: attributes)
     end
 
-    def reinstall(instance_id:)
-      Instance.new post_request("instances/#{instance_id}/reinstall").body.dig("instance")
+    def reinstall(instance_id:, **attributes)
+      Instance.new post_request("instances/#{instance_id}/reinstall", body: attributes).body.dig("instance")
     end
 
     def restore(instance_id:, **attributes)
-      Object.new post_request("instances/#{instance_id}/restore", attributes).body.dig("status")
+      Object.new post_request("instances/#{instance_id}/restore", body: attributes).body.dig("status")
     end
 
-    def halt(instance_id:)
-      post_request("instances/#{instance_id}/halt")
+    def halt(instance_id:, **attributes)
+      post_request("instances/#{instance_id}/halt", body: attributes)
     end
 
     def bandwidth(instance_id:)
@@ -46,7 +46,7 @@ module Vultr
     end
 
     def neighbors(instance_id:)
-      Object.new get_request("instances/#{instance_id}/neighbors").body.dig("neighbors")
+      get_request("instances/#{instance_id}/neighbors").body.dig("neighbors")
     end
 
     def user_data(instance_id:)
@@ -84,7 +84,7 @@ module Vultr
     end
 
     def ipv6_reverse(instance_id:)
-      response = get_request("instances/#{instance_id}/ipv6")
+      response = get_request("instances/#{instance_id}/ipv6/reverse")
       Collection.from_response(response, key: "reverse_ipv6s", type: Object)
     end
 

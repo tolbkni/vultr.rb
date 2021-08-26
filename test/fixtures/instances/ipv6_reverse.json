@@ -1,0 +1,15 @@
+{
+  "reverse_ipv6s": [
+    {
+      "ip": "2001:0db8:5:6bb:5400:2ff:fee5:1",
+      "reverse": "foo.example.com"
+    }
+  ],
+    "meta": {
+    "total": 1,
+    "links": {
+      "next": "",
+      "prev": ""
+    }
+  }
+}

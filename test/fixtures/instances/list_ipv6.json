@@ -1,0 +1,17 @@
+{
+  "ipv6s": [
+    {
+      "ip": "2001:0db8:5:6bb:5400:02ff:fee5:3fe3",
+      "network": "2001:0db8:5:6bb::",
+      "network_size": 64,
+      "type": "main_ip"
+    }
+  ],
+  "meta": {
+    "total": 1,
+    "links": {
+      "next": "",
+      "prev": ""
+    }
+  }
+}

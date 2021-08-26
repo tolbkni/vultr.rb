@@ -1,0 +1,32 @@
+{
+  "ipv4s": [
+    {
+      "ip": "192.0.2.123",
+      "netmask": "255.255.254.0",
+      "gateway": "192.0.2.1",
+      "type": "main_ip",
+      "reverse": "host1.example.com"
+    },
+    {
+      "ip": "203.0.113.123",
+      "netmask": "255.255.255.255",
+      "gateway": "",
+      "type": "secondary_ip",
+      "reverse": "host2.example.com"
+    },
+    {
+      "ip": "10.99.0.123",
+      "netmask": "255.255.0.0",
+      "gateway": "",
+      "type": "private",
+      "reverse": ""
+    }
+  ],
+  "meta": {
+    "total": 3,
+    "links": {
+      "next": "",
+      "prev": ""
+    }
+  }
+}
