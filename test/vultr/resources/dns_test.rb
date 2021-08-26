@@ -22,7 +22,7 @@ class DnsResourceTest < Minitest::Test
     dns = client.dns.create(**body)
 
     assert_equal "example.com", dns.domain
-    assert_equal "2020-10-10T01:56:20+00:00", dns.date_created
+    assert_equal Time.parse("2020-10-10T01:56:20+00:00"), dns.date_created
   end
 
   def test_retrieve
@@ -32,7 +32,7 @@ class DnsResourceTest < Minitest::Test
     dns = client.dns.retrieve(dns_domain: dns_domain)
 
     assert_equal "example.com", dns.domain
-    assert_equal "2020-10-10T01:56:20+00:00", dns.date_created
+    assert_equal Time.parse("2020-10-10T01:56:20+00:00"), dns.date_created
   end
 
   def test_update

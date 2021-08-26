@@ -20,7 +20,7 @@ class IsoResourceTest < Minitest::Test
     iso = client.iso.create(**body)
 
     assert_equal "cb676a46-66fd-4dfb-b839-443f2e6c0b60", iso.id
-    assert_equal "2020-10-10T01:56:20+00:00", iso.date_created
+    assert_equal Time.parse("2020-10-10T01:56:20+00:00"), iso.date_created
     assert_equal "my-iso.iso", iso.filename
     assert_equal "pending", iso.status
   end
