@@ -100,7 +100,10 @@ module Vultr
       @connection ||= Faraday.new(BASE_URL) do |conn|
         conn.request :authorization, :Bearer, api_key
         conn.request :json
+
+        conn.response :dates
         conn.response :json, content_type: "application/json"
+
         conn.adapter adapter, @stubs
       end
     end
