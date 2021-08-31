@@ -1,0 +1,9 @@
+{
+  "forwarding_rule": {
+    "id": "cb676a46-66fd-4dfb-b839-443f2e6c0b60",
+    "frontend_protocol": "http",
+    "frontend_port": 8080,
+    "backend_protocol": "http",
+    "backend_port": 80
+  }
+}

@@ -2,7 +2,7 @@ module Vultr
   class LoadBalancersResource < Resource
     def list(**params)
       response = get_request("load-balancers", params: params)
-      Collection.from_response(response: response, key: "load_balancers", type: LoadBalancer)
+      Collection.from_response(response, key: "load_balancers", type: LoadBalancer)
     end
 
     def create(**attributes)
@@ -23,7 +23,7 @@ module Vultr
 
     def list_forwarding_rules(load_balancer_id:, **params)
       response = get_request("load-balancers/#{load_balancer_id}/forwarding-rules", params: params)
-      Collection.from_response(response: response, key: "forwarding_rules", type: Object)
+      Collection.from_response(response, key: "forwarding_rules", type: Object)
     end
 
     def create_forwarding_rule(load_balancer_id:, **attributes)
@@ -40,7 +40,7 @@ module Vultr
 
     def list_firewall_rules(load_balancer_id:, **params)
       response = get_request("load-balancers/#{load_balancer_id}/firewall-rules", params: params)
-      Collection.from_response(response: response, key: "firewall_rules", type: Object)
+      Collection.from_response(response, key: "firewall_rules", type: Object)
     end
 
     def retrieve_firewall_rule(load_balancer_id:, firewall_rule_id:)

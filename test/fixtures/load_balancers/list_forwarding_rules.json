@@ -1,0 +1,18 @@
+{
+  "forwarding_rules": [
+    {
+      "id": "443f2e6c0b60",
+      "frontend_protocol": "http",
+      "frontend_port": 80,
+      "backend_protocol": "http",
+      "backend_port": 80
+    }
+  ],
+  "meta": {
+    "total": 1,
+    "links": {
+      "next": "",
+      "prev": ""
+    }
+  }
+}
