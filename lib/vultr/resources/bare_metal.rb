@@ -22,19 +22,19 @@ module Vultr
     end
 
     def start(baremetal_id:)
-      post_request("bare-metals/#{baremetal_id}/start")
+      post_request("bare-metals/#{baremetal_id}/start", body: {})
     end
 
     def reboot(baremetal_id:)
-      post_request("bare-metals/#{baremetal_id}/reboot")
+      post_request("bare-metals/#{baremetal_id}/reboot", body: {})
     end
 
     def reinstall(baremetal_id:)
-      BareMetal.new post_request("bare-metals/#{baremetal_id}/reinstall").body.dig("bare_metal")
+      BareMetal.new post_request("bare-metals/#{baremetal_id}/reinstall", body: {}).body.dig("bare_metal")
     end
 
     def halt(baremetal_id:)
-      post_request("bare-metals/#{baremetal_id}/halt")
+      post_request("bare-metals/#{baremetal_id}/halt", body: {})
     end
 
     def bandwidth(baremetal_id:)
@@ -50,16 +50,16 @@ module Vultr
     end
 
     def vnc(baremetal_id:)
-      Object.new get_request("bare-metals/#{baremetal_id}/vnc", params: params).body.dig("vnc")
+      Object.new get_request("bare-metals/#{baremetal_id}/vnc").body.dig("vnc")
     end
 
-    def list_ipv4(baremetal_id:, **params)
-      response = get_request("bare-metals/#{baremetal_id}/ipv4", params: params)
+    def list_ipv4(baremetal_id:)
+      response = get_request("bare-metals/#{baremetal_id}/ipv4")
       Collection.from_response(response, key: "ipv4s", type: Object)
     end
 
-    def list_ipv6(baremetal_id:, **params)
-      response = get_request("bare-metals/#{baremetal_id}/ipv6", params: params)
+    def list_ipv6(baremetal_id:)
+      response = get_request("bare-metals/#{baremetal_id}/ipv6")
       Collection.from_response(response, key: "ipv6s", type: Object)
     end
 

@@ -1,0 +1,18 @@
+{
+  "ipv4s": [
+    {
+      "ip": "192.0.2.123",
+      "netmask": "255.255.254.0",
+      "gateway": "192.0.2.1",
+      "type": "main_ip",
+      "reverse": "192.0.2.123.vultr.com"
+    }
+  ],
+  "meta": {
+    "total": 1,
+    "links": {
+      "next": "next",
+      "prev": "prev"
+    }
+  }
+}
