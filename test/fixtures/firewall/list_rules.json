@@ -1,0 +1,22 @@
+{
+  "firewall_rules": [
+    {
+      "id": 1,
+      "ip_type": "v4",
+      "action": "accept",
+      "protocol": "tcp",
+      "port": "80",
+      "subnet": "192.0.2.0",
+      "subnet_size": 24,
+      "source": "",
+      "notes": "Example Firewall Rule"
+    }
+  ],
+  "meta": {
+    "total": 1,
+    "links": {
+      "next": "",
+      "prev": ""
+    }
+  }
+}

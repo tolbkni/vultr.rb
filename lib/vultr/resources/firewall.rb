@@ -2,7 +2,7 @@ module Vultr
   class FirewallResource < Resource
     def list(**params)
       response = get_request("firewalls", params: params)
-      Collection.from_response(response: response, key: "firewall_groups", type: FirewallGroup)
+      Collection.from_response(response, key: "firewall_groups", type: FirewallGroup)
     end
 
     def create(**attributes)
@@ -24,7 +24,7 @@ module Vultr
     # Firewall Rules
     def list_rules(firewall_group_id:, **params)
       response = get_request("firewalls/#{firewall_group_id}/rules", params: params)
-      Collection.from_response(response: response, key: "firewall_rules", type: Object)
+      Collection.from_response(response, key: "firewall_rules", type: Object)
     end
 
     def create_rule(firewall_group_id:, **attributes)
