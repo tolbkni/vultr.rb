@@ -1,0 +1,25 @@
+{
+  "node_pool": {
+    "id": "4130764b-5276-4552-546f-32513239732b",
+    "date_created": "2021-07-07T23:29:18+00:00",
+    "date_updated": "2021-07-08T23:29:18+00:00",
+    "label": "nodepool-48770716",
+    "plan_id": "vc2-1c-2gb",
+    "status": "pending",
+    "count": 2,
+    "nodes": [
+      {
+        "id": "2f863151-d784-4184-804e-31e4e60945bd",
+        "label": "nodepool-48770716-6c360e638ce61",
+        "date_created": "2021-07-07T23:29:18+00:00",
+        "status": "pending"
+      },
+      {
+        "id": "73a459dc-293f-4c2b-92f7-61be459a033b",
+        "label": "nodepool-48770716-6c360e638ce6c",
+        "date_created": "2021-07-07T23:29:18+00:00",
+        "status": "pending"
+      }
+    ]
+  }
+}

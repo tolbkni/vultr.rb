@@ -1,0 +1,13 @@
+{
+  "block": {
+    "id": "cb676a46-66fd-4dfb-b839-443f2e6c0b60",
+    "date_created": "2020-10-10T01:56:20+00:00",
+    "cost": 5,
+    "status": "active",
+    "size_gb": 50,
+    "region": "ewr",
+    "attached_to_instance": "742c9913-d088-4d67-bc61-5a10e922fbd1",
+    "label": "Example Block Storage",
+    "mount_id": "ewr-example112233"
+  }
+}

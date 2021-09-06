@@ -1,0 +1,26 @@
+{
+  "resources": {
+    "block_storage": [
+      {
+        "id": "29479a12-6edd-48cf-a883-24eccafab094",
+        "label": "29479a12-6edd-48cf-a883-24eccafab094",
+        "date_created": "2021-07-29T16:41:07+00:00",
+        "status": "active"
+      },
+      {
+        "id": "0fa3097e-aef9-475e-958a-56f697ed3998",
+        "label": "0fa3097e-aef9-475e-958a-56f697ed3998",
+        "date_created": "2021-08-04T15:34:50+00:00",
+        "status": "pending"
+      }
+    ],
+    "load_balancer": [
+      {
+        "id": "369ed902-2ec4-4a22-b959-cb1709394c3a",
+        "label": "369ed902-2ec4-4a22-b959-cb1709394c3a",
+        "date_created": "2021-07-29T16:46:12+00:00",
+        "status": "active"
+      }
+    ]
+  }
+}

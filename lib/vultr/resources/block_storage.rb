@@ -21,12 +21,12 @@ module Vultr
       delete_request("blocks/#{block_id}")
     end
 
-    def attach(block_id:, **params)
-      post_request("blocks/#{block_id}/attach", body: params)
+    def attach(block_id:)
+      post_request("blocks/#{block_id}/attach", body: {})
     end
 
-    def detach(block_id:, **params)
-      post_request("blocks/#{block_id}/detach", body: params)
+    def detach(block_id:)
+      post_request("blocks/#{block_id}/detach", body: {})
     end
   end
 end
