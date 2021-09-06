@@ -1,6 +1,6 @@
 # Vultr API Rubygem
 
-[![Build Status](https://github.com/excid3/vultr.rb/workflows/Tests/badge.svg)](https://github.com/excid3/vultr.rb/actions)
+[![Build Status](https://github.com/tolbkni/vultr.rb/workflows/Tests/badge.svg)](https://github.com/tolbkni/vultr.rb/actions)
 
 The easiest and most complete rubygem for [Vultr](https://www.vultr.com). Currently supports [API v2](https://www.vultr.com/api/v2).
 
@@ -8,7 +8,7 @@ The easiest and most complete rubygem for [Vultr](https://www.vultr.com). Curren
 
 Add this line to your application's Gemfile:
 
-    gem 'vultr', github: "excid3/vultr.rb"
+    gem 'vultr'
 
 And then execute:
 
