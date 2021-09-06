@@ -1,0 +1,85 @@
+{
+  "vke_clusters": [
+    {
+      "id": "c907e832-3080-48a6-a54d-7379e645c0b7",
+      "label": "my-vke",
+      "date_created": "2021-07-02T12:12:43+00:00",
+      "cluster_subnet": "10.244.0.0/16",
+      "service_subnet": "10.96.0.0/12",
+      "ip": "8.9.30.155",
+      "endpoint": "c907e832-3080-48a6-a54d-7379e645c0b7.vultr-k8s.com",
+      "version": "v1.20.0+1",
+      "region": "ewr",
+      "status": "active",
+      "node_pools": [
+        {
+          "id": "74de1914-63ea-4a78-9da5-b7220063c701",
+          "date_created": "2021-07-02T12:12:44+00:00",
+          "date_updated": "2021-07-03T12:12:44+00:00",
+          "label": "nodepool-48597451",
+          "plan_id": "vc2-1c-2gb",
+          "status": "active",
+          "count": 2,
+          "nodes": [
+            {
+              "id": "cafd4673-2a62-49c4-a045-44d05ecc0a7b",
+              "label": "nodepool-48597451-6a960df02bc1b",
+              "date_created": "2021-07-02T12:12:44+00:00",
+              "status": "active"
+            },
+            {
+              "id": "5fc5ae88-f73e-46b5-9fa1-ac5ed8dcd33c",
+              "label": "nodepool-48597451-6a960df02bc25",
+              "date_created": "2021-07-02T12:12:44+00:00",
+              "status": "active"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "455dcd32-e621-48ee-a10e-0cb5f754e13e",
+      "label": "vke",
+      "date_created": "2021-07-07T22:57:01+00:00",
+      "cluster_subnet": "10.244.0.0/16",
+      "service_subnet": "10.96.0.0/12",
+      "ip": "207.246.109.187",
+      "endpoint": "455dcd32-e621-48ee-a10e-0cb5f754e13e.vultr-k8s.com",
+      "version": "v1.20.0+1",
+      "region": "lax",
+      "status": "active",
+      "node_pools": [
+        {
+          "id": "11e4443a-f92a-46d6-94c8-61c1a1a7514e",
+          "date_created": "2021-07-07T22:57:01+00:00",
+          "date_updated": "2021-07-08T12:12:44+00:00",
+          "label": "my-label-48770259",
+          "plan_id": "vc2-1c-2gb",
+          "status": "active",
+          "count": 2,
+          "nodes": [
+            {
+              "id": "43eda5c8-67f7-4c63-88bc-2f568b48b2b0",
+              "label": "my-label-48770259-6ac60e6313dd1",
+              "date_created": "2021-07-07T22:57:01+00:00",
+              "status": "active"
+            },
+            {
+              "id": "15a7893d-d584-45d5-a74c-d9f46866aa3c",
+              "label": "my-label-48770259-6ac60e6313ddc",
+              "date_created": "2021-07-07T22:57:01+00:00",
+              "status": "active"
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "meta": {
+    "total": 2,
+    "links": {
+      "next": "next",
+      "prev": "prev"
+    }
+  }
+}

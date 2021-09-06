@@ -1,0 +1,12 @@
+{
+  "bandwidth": {
+    "2020-07-25": {
+      "incoming_bytes": 15989787,
+      "outgoing_bytes": 25327729
+    },
+    "2020-07-26": {
+      "incoming_bytes": 13964112,
+      "outgoing_bytes": 22257069
+    }
+  }
+}

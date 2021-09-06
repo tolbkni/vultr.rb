@@ -1,0 +1,20 @@
+{
+  "regions": [
+    {
+      "id": "ams",
+      "city": "Amsterdam",
+      "country": "NL",
+      "continent": "Europe",
+      "options": [
+        "ddos_protection"
+      ]
+    }
+  ],
+  "meta": {
+    "total": 1,
+    "links": {
+      "next": "",
+      "prev": ""
+    }
+  }
+}

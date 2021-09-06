@@ -1,0 +1,17 @@
+{
+  "public_isos": [
+    {
+      "id": "cb676a46-66fd-4dfb-b839-443f2e6c0b604",
+      "name": "CentOS 7",
+      "description": "7 x86_64 Minimal",
+      "md5sum": "7f4df50f42ee1b52b193e79855a3aa19"
+    }
+  ],
+  "meta": {
+    "total": 1,
+    "links": {
+      "next": "",
+      "prev": ""
+    }
+  }
+}

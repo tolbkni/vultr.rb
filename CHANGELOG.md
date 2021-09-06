@@ -1,3 +1,7 @@
+== 1.0.0
+
+* Vultr API v2 support
+
 == 0.4.3 / 2019-10-8
 
 * Relaxed Faraday dependencies

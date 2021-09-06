@@ -1,0 +1,19 @@
+{
+  "records": [
+    {
+      "id": "cb676a46-66fd-4dfb-b839-443f2e6c0b60",
+      "type": "A",
+      "name": "foo.example.com",
+      "data": "192.0.2.123",
+      "priority": 0,
+      "ttl": 300
+    }
+  ],
+  "meta": {
+    "total": 1,
+    "links": {
+      "next": "next",
+      "prev": "prev"
+    }
+  }
+}

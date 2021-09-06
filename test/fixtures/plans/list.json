@@ -1,0 +1,22 @@
+{
+  "plans": [
+    {
+      "id": "vhf-8c-32gb",
+      "vcpu_count": 8,
+      "ram": 32768,
+      "disk": 512,
+      "disk_count": 1,
+      "bandwidth": 6144,
+      "monthly_cost": 192,
+      "type": "vhf",
+      "locations": ["sea"]
+    }
+  ],
+  "meta": {
+    "total": 1,
+    "links": {
+      "next": "next_id",
+      "prev": "prev_id"
+    }
+  }
+}

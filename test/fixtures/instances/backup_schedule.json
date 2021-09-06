@@ -1,0 +1,10 @@
+{
+  "backup_schedule": {
+    "enabled": true,
+    "type": "daily",
+    "next_scheduled_time_utc": "2020-07-28 00:00:00",
+    "hour": 10,
+    "dow": 1,
+    "dom": 1
+  }
+}

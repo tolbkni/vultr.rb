@@ -1,0 +1,17 @@
+{
+  "clusters": [
+    {
+      "id": 2,
+      "region": "ewr",
+      "hostname": "ewr1.vultrobjects.com",
+      "deploy": "yes"
+    }
+  ],
+  "meta": {
+    "total": 1,
+    "links": {
+      "next": "",
+      "prev": ""
+    }
+  }
+}

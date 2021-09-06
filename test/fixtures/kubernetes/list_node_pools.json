@@ -1,0 +1,56 @@
+{
+  "node_pools": [
+    {
+      "id": "e97bdee9-2781-4f31-be03-60fc75f399ae",
+      "date_created": "2021-07-07T23:27:08+00:00",
+      "date_updated": "2021-07-08T12:12:44+00:00",
+      "label": "my-label-48770703",
+      "plan_id": "vc2-1c-2gb",
+      "status": "active",
+      "count": 2,
+      "nodes": [
+        {
+          "id": "f2e11430-76e5-4dc6-a1c9-ef5682c21ddf",
+          "label": "my-label-48770703-44060e6384c45",
+          "date_created": "2021-07-07T23:27:08+00:00",
+          "status": "active"
+        },
+        {
+          "id": "c0a160eb-a7bc-4377-a6fb-52a9531167ca",
+          "label": "my-label-48770703-44060e6384c50",
+          "date_created": "2021-07-07T23:27:08+00:00",
+          "status": "active"
+        }
+      ]
+    },
+    {
+      "id": "4130764b-5276-4552-546f-32513239732b",
+      "date_created": "2021-07-07T23:29:18+00:00",
+      "label": "nodepool-48770716",
+      "plan_id": "vc2-1c-2gb",
+      "status": "active",
+      "count": 2,
+      "nodes": [
+        {
+          "id": "2f863151-d784-4184-804e-31e4e60945bd",
+          "label": "nodepool-48770716-6c360e638ce61",
+          "date_created": "2021-07-07T23:29:18+00:00",
+          "status": "active"
+        },
+        {
+          "id": "73a459dc-293f-4c2b-92f7-61be459a033b",
+          "label": "nodepool-48770716-6c360e638ce6c",
+          "date_created": "2021-07-07T23:29:18+00:00",
+          "status": "active"
+        }
+      ]
+    }
+  ],
+  "meta": {
+    "total": 2,
+    "links": {
+      "next": "next",
+      "prev": "prev"
+    }
+  }
+}

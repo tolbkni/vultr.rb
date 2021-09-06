@@ -1,0 +1,35 @@
+{
+  "instance": {
+    "id": "cb676a46-66fd-4dfb-b839-443f2e6c0b60",
+    "os": "Ubuntu 20.04 x64",
+    "ram": 16384,
+    "disk": 384,
+    "main_ip": "192.0.2.123",
+    "vcpu_count": 4,
+    "region": "ewr",
+    "plan": "vc2-6c-16gb",
+    "date_created": "2020-10-10T01:56:20+00:00",
+    "status": "active",
+    "allowed_bandwidth": 5000,
+    "netmask_v4": "255.255.254.0",
+    "gateway_v4": "192.0.2.1",
+    "power_status": "running",
+    "server_status": "ok",
+    "v6_network": "",
+    "v6_main_ip": "",
+    "v6_network_size": 0,
+    "label": "Example Instance",
+    "internal_ip": "",
+    "kvm": "https://my.vultr.com/subs/vps/novnc/api.php?data=00example11223344",
+    "tag": "Example Tag",
+    "os_id": 215,
+    "app_id": 0,
+    "image_id": "",
+    "firewall_group_id": "",
+    "features": [
+      "ddos_protection",
+      "ipv6",
+      "auto_backups"
+    ]
+  }
+}

@@ -1,0 +1,48 @@
+{
+  "load_balancer": {
+    "id": "cb676a46-66fd-4dfb-b839-443f2e6c0b60",
+    "date_created": "2020-10-10T01:56:20+00:00",
+    "region": "ewr",
+    "label": "Example Load Balancer",
+    "status": "active",
+    "ipv4": "192.0.2.123",
+    "ipv6": "2001:0db8:5:4973:ffff:ffff:ffff:ffff",
+    "generic_info": {
+      "balancing_algorithm": "roundrobin",
+      "ssl_redirect": false,
+      "sticky_sessions": {
+        "cookie_name": "example-cookie"
+      },
+      "proxy_protocol": false,
+      "private_network": "9fed374c-0afc-42bf-926c-abcf840b5406"
+    },
+    "health_check": {
+      "protocol": "http",
+      "port": 80,
+      "path": "/health",
+      "check_interval": 10,
+      "response_timeout": 5,
+      "unhealthy_threshold": 3,
+      "healthy_threshold": 3
+    },
+    "has_ssl": false,
+    "forwarding_rules": [
+      {
+        "id": "73d85156c2c3129d",
+        "frontend_protocol": "http",
+        "frontend_port": 80,
+        "backend_protocol": "http",
+        "backend_port": 80
+      }
+    ],
+    "firewall_rules": [
+      {
+        "id": "abcd123b93016eafb",
+        "port": 80,
+        "source": "198.51.100.0/24",
+        "ip_type": "v4"
+      }
+    ],
+    "instances": []
+  }
+}

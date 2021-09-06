@@ -1,0 +1,20 @@
+{
+  "firewall_groups": [
+    {
+      "id": "cb676a46-66fd-4dfb-b839-443f2e6c0b60",
+      "description": "Example Firewall Group",
+      "date_created": "2020-10-10T01:56:20+00:00",
+      "date_modified": "2020-10-10T01:59:20+00:00",
+      "instance_count": 0,
+      "rule_count": 0,
+      "max_rule_count": 50
+    }
+  ],
+  "meta": {
+    "total": 1,
+    "links": {
+      "next": "",
+      "prev": ""
+    }
+  }
+}

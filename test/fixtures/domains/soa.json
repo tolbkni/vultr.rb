@@ -1,0 +1,6 @@
+{
+  "dns_soa": {
+    "nsprimary": "ns1.vultr.com",
+    "email": "admin@example.com"
+  }
+}

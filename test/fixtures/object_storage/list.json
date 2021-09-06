@@ -1,0 +1,22 @@
+{
+  "object_storages": [
+    {
+      "id": "cb676a46-66fd-4dfb-b839-443f2e6c0b60",
+      "date_created": "2020-10-10T01:56:20+00:00",
+      "cluster_id": 2,
+      "region": "ewr",
+      "label": "Example Object Storage",
+      "status": "active",
+      "s3_hostname": "ewr1.vultrobjects.com",
+      "s3_access_key": "00example11223344",
+      "s3_secret_key": "00example1122334455667788990011"
+    }
+  ],
+  "meta": {
+    "total": 1,
+    "links": {
+      "next": "",
+      "prev": ""
+    }
+  }
+}

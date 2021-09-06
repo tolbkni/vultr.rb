@@ -1,0 +1,17 @@
+{
+  "firewall_rules": [
+    {
+      "id": "asb123f2e6c0b60",
+      "port": 80,
+      "source": "24.187.16.196/16",
+      "ip_type": "v4"
+    }
+  ],
+  "meta": {
+    "total": 1,
+    "links": {
+      "next": "",
+      "prev": ""
+    }
+  }
+}

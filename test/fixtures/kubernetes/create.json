@@ -1,0 +1,39 @@
+{
+  "vke_cluster": {
+    "id": "455dcd32-e621-48ee-a10e-0cb5f754e13e",
+    "label": "vke",
+    "date_created": "2021-07-07T22:57:01+00:00",
+    "cluster_subnet": "10.244.0.0/16",
+    "service_subnet": "10.96.0.0/12",
+    "ip": "0.0.0.0",
+    "endpoint": "455dcd32-e621-48ee-a10e-0cb5f754e13e.vultr-k8s.com",
+    "version": "v1.20.0+1",
+    "region": "lax",
+    "status": "pending",
+    "node_pools": [
+      {
+        "id": "11e4443a-f92a-46d6-94c8-61c1a1a7514e",
+        "date_created": "2021-07-07T22:57:01+00:00",
+        "date_updated": "2021-07-07T22:58:44+00:00",
+        "label": "my-label-48770259",
+        "plan_id": "vc2-1c-2gb",
+        "status": "pending",
+        "count": 2,
+        "nodes": [
+          {
+            "id": "43eda5c8-67f7-4c63-88bc-2f568b48b2b0",
+            "label": "my-label-48770259-6ac60e6313dd1",
+            "date_created": "2021-07-07T22:57:01+00:00",
+            "status": "pending"
+          },
+          {
+            "id": "15a7893d-d584-45d5-a74c-d9f46866aa3c",
+            "label": "my-label-48770259-6ac60e6313ddc",
+            "date_created": "2021-07-07T22:57:01+00:00",
+            "status": "pending"
+          }
+        ]
+      }
+    ]
+  }
+}

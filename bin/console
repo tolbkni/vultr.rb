@@ -1,0 +1,21 @@
+#!/usr/bin/env ruby
+# frozen_string_literal: true
+
+require "bundler/setup"
+require "vultr"
+
+# You can add fixtures and/or initialization code here to make experimenting
+# with your gem easier. You can also use a different console, if you like.
+
+# (If you use this, don't forget to add pry to your Gemfile!)
+# require "pry"
+# Pry.start
+
+client = Vultr::Client.new(api_key: ENV["VULTR_API_KEY"])
+
+puts
+puts "We've created a 'client' variable as a Vultr::Client using ENV['VULTR_API_KEY'] as the API key."
+puts
+
+require "irb"
+IRB.start(__FILE__)
