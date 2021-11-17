@@ -8,7 +8,7 @@ The easiest and most complete rubygem for [Vultr](https://www.vultr.com). Curren
 
 Add this line to your application's Gemfile:
 
-    gem 'vultr'
+    gem 'vultr', github: "excid3/vultr.rb"
 
 And then execute:
 
