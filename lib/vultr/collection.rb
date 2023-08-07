@@ -1,5 +1,6 @@
 module Vultr
   class Collection
+    include Enumerable
     attr_reader :data, :total, :next_cursor, :prev_cursor
 
     def self.from_response(response, key:, type:)
@@ -17,6 +18,11 @@ module Vultr
       @total = total
       @next_cursor = next_cursor.empty? ? nil : next_cursor
       @prev_cursor = prev_cursor.empty? ? nil : prev_cursor
+    end
+
+    def each(&)
+      @data.each(&)
+      self
     end
   end
 end
