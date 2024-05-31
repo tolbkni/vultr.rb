@@ -101,7 +101,7 @@ module Vultr
         conn.request :authorization, :Bearer, api_key
         conn.request :json
 
-        conn.response :dates
+        conn.response :vultr
         conn.response :json, content_type: "application/json"
 
         conn.adapter adapter, @stubs

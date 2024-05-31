@@ -1,11 +1,11 @@
-require "faraday"
-require "faraday_middleware"
 require "vultr/version"
+require "faraday"
 
 module Vultr
   autoload :Client, "vultr/client"
   autoload :Collection, "vultr/collection"
   autoload :Error, "vultr/error"
+  autoload :Middleware, "vultr/middleware"
   autoload :Resource, "vultr/resource"
   autoload :Object, "vultr/object"
 
@@ -54,4 +54,6 @@ module Vultr
   autoload :SshKey, "vultr/objects/ssh_key"
   autoload :StartupScript, "vultr/objects/startup_script"
   autoload :User, "vultr/objects/user"
+
+  Faraday::Response.register_middleware vultr: Middleware
 end
