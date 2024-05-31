@@ -18,7 +18,7 @@ Gem::Specification.new do |s|
   s.executables = s.files.grep(%r{^bin/}) { |f| File.basename(f) }
   s.require_paths = ["lib"]
 
-  s.required_ruby_version = ">= 2.4"
+  s.required_ruby_version = ">= 3.0"
 
   s.add_dependency "faraday", ">= 1.0", "< 3.0"
 end

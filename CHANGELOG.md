@@ -1,3 +1,8 @@
+== 2.0.0 / 2024-5-31
+
+* Drop Ruby 2.7 and older support
+* Add Faraday 2.0 support
+
 == 1.0.0
 
 * Vultr API v2 support
