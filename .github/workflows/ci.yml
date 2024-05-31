@@ -13,7 +13,7 @@ jobs:
     strategy:
       matrix:
         ruby: ["2.7", "3.0", "3.1", "3.2", "3.3"]
-        gemfile: ["faraday-1", "faraday-2"]
+        gemfile: ["faraday_1", "faraday_2"]
 
     env:
       BUNDLE_GEMFILE: ${{ github.workspace }}/gemfiles/${{ matrix.gemfile }}.gemfile
