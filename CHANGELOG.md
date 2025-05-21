@@ -1,3 +1,7 @@
+== 2.1.0 / 2025-5-21
+
+* Add enumerable to Collection
+
 == 2.0.0 / 2024-5-31
 
 * Drop Ruby 2.7 and older support

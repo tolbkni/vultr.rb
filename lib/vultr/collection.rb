@@ -20,8 +20,8 @@ module Vultr
       @prev_cursor = prev_cursor.empty? ? nil : prev_cursor
     end
 
-    def each(&)
-      @data.each(&)
+    def each(&block)
+      @data.each(&block)
       self
     end
   end
