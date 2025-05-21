@@ -20,9 +20,9 @@ module Vultr
       @prev_cursor = prev_cursor.empty? ? nil : prev_cursor
     end
 
-    def each(&block)
+    def each
+      return enum_for(:each) unless block_given?
       @data.each(&block)
-      self
     end
   end
 end
