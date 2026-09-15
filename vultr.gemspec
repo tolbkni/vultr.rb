@@ -14,8 +14,7 @@ Gem::Specification.new do |s|
   s.homepage = "https://github.com/tolbkni/vultr.rb"
   s.license = "MIT"
 
-  s.files = `git ls-files -z`.split("\x0")
-  s.executables = s.files.grep(%r{^bin/}) { |f| File.basename(f) }
+  s.files = Dir["lib/**/*.rb", "CHANGELOG.md", "LICENSE.txt", "README.md"]
   s.require_paths = ["lib"]
 
   s.required_ruby_version = ">= 3.0"
