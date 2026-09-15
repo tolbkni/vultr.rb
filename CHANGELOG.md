@@ -1,3 +1,9 @@
+== 2.1.1 / 2026-9-15
+
+* Fix Collection#each raising NameError
+* Add ostruct dependency for Ruby 4.0 support
+* Only package lib, README, LICENSE, and CHANGELOG in the gem
+
 == 2.1.0 / 2025-5-21
 
 * Add enumerable to Collection

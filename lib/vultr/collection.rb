@@ -1,6 +1,7 @@
 module Vultr
   class Collection
     include Enumerable
+
     attr_reader :data, :total, :next_cursor, :prev_cursor
 
     def self.from_response(response, key:, type:)
@@ -20,7 +21,7 @@ module Vultr
       @prev_cursor = prev_cursor.empty? ? nil : prev_cursor
     end
 
-    def each
+    def each(&block)
       return enum_for(:each) unless block_given?
       @data.each(&block)
     end

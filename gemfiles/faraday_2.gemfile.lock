@@ -1,8 +1,9 @@
 PATH
   remote: ..
   specs:
-    vultr (2.1.0)
+    vultr (2.1.1)
       faraday (>= 1.0, < 3.0)
+      ostruct
 
 GEM
   remote: https://rubygems.org/
@@ -25,6 +26,7 @@ GEM
     minitest (5.25.5)
     net-http (0.6.0)
       uri
+    ostruct (0.6.3)
     parallel (1.27.0)
     parser (3.3.8.0)
       ast (~> 2.4.1)
