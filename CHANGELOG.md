@@ -1,3 +1,5 @@
+== Unreleased
+
 == 2.1.2 / 2026-9-15
 
 * Fix Collection#each raising NameError
