@@ -1,5 +1,7 @@
 == Unreleased
 
+== 2.2.0 / 2026-11-24
+
 * Raise a `Vultr::Error` subclass for each status the API answers with: `BadRequest` (400), `Unauthorized` (401), `Forbidden` (403), `NotFound` (404), `RateLimited` (429 and 503) and `ServerError` (500). Rescuing `Vultr::Error` still catches them all.
 
 == 2.1.2 / 2026-9-15
